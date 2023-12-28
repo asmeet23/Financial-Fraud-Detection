@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fraud Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        form {
+            width: 300px;
+            margin: 0 auto;
+        }
+        
+        label {
+            display: block;
+            margin-top: 20px;
+        }
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Fraud Detection</h1>
+    <form action="/predict" method="post">
+        <label for="Unnamed">Unnamed:</label><br>
+        <input type="text" id="Unnamed" name="Unnamed"><br>
+        <label for="cc_num">Credit Card Number:</label><br>
+        <input type="text" id="cc_num" name="cc_num"><br>
+        <label for="amt">Amount:</label><br>
+        <input type="text" id="amt" name="amt"><br>
+        <label for="zip">ZIP:</label><br>
+        <input type="text" id="zip" name="zip"><br>
+        <label for="city_pop">City Population:</label><br>
+        <input type="text" id="city_pop" name="city_pop"><br>
+        <label for="trans_num">Transaction Number:</label><br>
+        <input type="text" id="trans_num" name="trans_num"><br>
+        <label for="unix_time">Unix Time:</label><br>
+        <input type="text" id="unix_time" name="unix_time"><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
