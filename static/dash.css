@@ -26,10 +26,15 @@ background-image: url(/dark-black-polygonal-illustration-which-consist-triangles
   
   .nav > .nav-header > .nav-title {
     display: inline-block;
-    font-size: 22px;
+    font-size: 30px;
     color:white;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
+  
   }
+  /* .nav > .nav-header > .nav-title > .logo{
+margin-top: 10px;
+  } */
+  
   
   .nav > .nav-btn {
     display: none;
