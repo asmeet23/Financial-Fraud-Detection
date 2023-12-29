@@ -1,14 +1,14 @@
 * {
     box-sizing: border-box;
-    font-weight: 700;
-    font-family:Georgia, 'Times New Roman', Times, serif
+    /* font-weight: 700;  */
+    /* font-family:Georgia, 'Times New Roman', Times, serif */
    
   }
   
   body {
-background-image: url(/dark-black-polygonal-illustration-which-consist-triangles-geometric-background-origami-style-with-grad.jpg);
+/* background-image: url(/dark-black-polygonal-illustration-which-consist-triangles-geometric-background-origami-style-with-grad.jpg); */
     margin: 0px;
-    font-family: 'segoe ui';
+    font-family: 'jomhuria';
     background-size: cover;
   }
   
@@ -117,7 +117,12 @@ margin-top: 10px;
 .animated-border-button:hover::after {
   width: 100%;
 }
-  
+ 
+.cont1{
+  background-image: url(/dark-black-polygonal-illustration-which-consist-triangles-geometric-background-origami-style-with-grad.jpg); 
+  height: 100vh; 
+  background-size: cover;
+}
   .centre-items{
     position: absolute;
     top: 50%;
@@ -148,7 +153,10 @@ margin-top: 10px;
     background-size:100%; */
   }
 
-
+  @font-face {
+    font-family: jomhuria;
+    src: url(/Jomhuria-Regular.ttf);
+  }
 
 
 
