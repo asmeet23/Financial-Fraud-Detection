@@ -9,6 +9,7 @@
 background-image: url(/dark-black-polygonal-illustration-which-consist-triangles-geometric-background-origami-style-with-grad.jpg);
     margin: 0px;
     font-family: 'segoe ui';
+    background-size: cover;
   }
   
   .nav {
