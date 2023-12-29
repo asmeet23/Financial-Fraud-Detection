@@ -1,11 +1,12 @@
 * {
     box-sizing: border-box;
     font-weight: 700;
+    font-family:Georgia, 'Times New Roman', Times, serif
    
   }
   
   body {
-    background-color: #121212;
+background-image: url(/dark-black-polygonal-illustration-which-consist-triangles-geometric-background-origami-style-with-grad.jpg);
     margin: 0px;
     font-family: 'segoe ui';
   }
@@ -14,7 +15,7 @@
     
     height: 50px;
     width: 100%;
-    background-color: black;
+    background-color: #c3073f;
     position: relative;
   }
   
@@ -55,6 +56,99 @@
   .nav > #nav-check {
     display: none;
   }
+
+
+  .info{
+    color: white;
+    /* border: solid 1px white; */
+    display: flex;
+    /* text-align: center; */
+    flex-direction: column;
+    justify-content: center;
+    /* border: solid white; */
+    width: 800px;
+    height: max-content;
+    /* margin-left: 200px; */
+    padding: 50px;
+  }
+  .animated-border-button{
+    width: 200px;
+    height: 50px;
+    background-color: #c3073f;
+    border: 1px solid #65b5f6;
+    color: white;
+    font-size: 20px;
+    /* font-weight: 700; */
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+
+    transition: all 0.3s ease-in-out;
+  }
+  .animated-border-button::before,
+.animated-border-button::after {
+  border: 0 solid transparent;
+  transition: all 0.3s;
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 24px;
+}
+
+.animated-border-button::before {
+  border-top: 2px solid #ffffff;
+  right: 0;
+  top: -4px;
+}
+
+.animated-border-button::after {
+  border-bottom: 2px solid #ffffff;
+  bottom: -4px;
+  left: 0;
+}
+
+.animated-border-button:hover::before,
+.animated-border-button:hover::after {
+  width: 100%;
+}
+  
+  .centre-items{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+   
+    /* border: solid white; */
+  }
+  .picture
+  {
+    /* border: solid white; */
+    width: max-content;
+    height: max-content;
+    display: flex;
+    
+    justify-content: center;
+    align-items: center;
+/* border: solid white; */
+    /* background-image: url(/7176685.jpg); */
+    /* background-repeat: no-repeat;
+    background-size:100%; */
+  }
+
+
+
+
+
+
+
+
   
   @media (max-width:600px) {
     .nav > .nav-btn {
