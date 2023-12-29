@@ -3,40 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Login Page</title>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
   <link rel="stylesheet" type="text/css" href="/static/login.css">
 </head>
 
 <body>
+  <h1>Vanguard</h1>
   <div class="login-container">
-    <h2>Login</h2>
-    <form id="form" action="post">
-      <div class="form-group">
-         <label for="exampleInputEmail1">Email address</label>
-         <input type="email"  
-                id="email" 
-                class="form-control"  
-                aria-describedby="emailHelp" >
-          <small id="emailHelp" 
-                  class="form-text text-muted">
-               We'll never share your email with anyone else.
-          </small>
-      </div>
-      <div class="form-group">
-         <label for="exampleInputPassword1">Password</label>
-         <input type="password" id="password" class="form-control" >
-      </div>
-      <button type="submit" 
-               class="btn btn-outline-success btn-lg shadow" 
-               onClick="auth(event)">Submit</button>
+    <h2>Welcome!</h2>
+    <h3>Please login to continue</h3>
+    <form id="form" class="form1" action="post">
+      <span>
+        <div><input class="text-input text-input--material" id="Username" placeholder="Username" type="text" required></div>
+        <br />
+        <div><input class="text-input text-input--material" id="password" placeholder="Password" type="password" required></div>
+      </span>
+      <br>
+      <br>
+      <button class="button button--large--cta" style="width: 95%; margin-top: 60px; border-radius:50px;" onClick="auth(event)">Login</button>
    </form>
+   
    <script>
       function auth(event) {
             event.preventDefault();
   
-            var email = document.getElementById("email").value;
+            var email = document.getElementById("Username").value;
             var password = document.getElementById("password").value;
   
-            if (email === "admin@gmail.com" && password === "user") {
+            if (email === "user" && password === "user") {
                  window.location.replace("/templates/dashboard.html");
             } else {
                 alert("Invalid information");
@@ -44,7 +39,11 @@
             }
       }
    </script> 
+   
   </div>
+  <footer><a href="" target="blank"><img src="https://www.polymer-project.org/images/logos/p-logo.svg"></a>
+    <p>Brought to you by The A-Team </p>
+  </footer>
 </body>
 </html>
 
