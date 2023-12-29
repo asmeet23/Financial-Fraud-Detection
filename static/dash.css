@@ -10,6 +10,7 @@
     margin: 0px;
     font-family: 'jomhuria';
     background-size: cover;
+    background-color: #1a1a1d;
   }
   
   .nav {
@@ -22,13 +23,16 @@
   
   .nav > .nav-header {
     display: inline;
+    margin-left: 15px;
   }
   
   .nav > .nav-header > .nav-title {
     display: inline-block;
-    font-size: 30px;
+    font-size: 50px;
     color:white;
-    padding: 10px;
+        /* padding: 5px; */
+        padding-left: 15px;
+        padding-top: 2px;
   
   }
   /* .nav > .nav-header > .nav-title > .logo{
@@ -43,7 +47,8 @@ margin-top: 10px;
   .nav > .nav-links {
     display: inline;
     float: right;
-    font-size: 18px;
+    font-family: jose;
+    font-size: 20px;
     /* height: ; */
   }
   
@@ -72,16 +77,36 @@ margin-top: 10px;
     flex-direction: column;
     justify-content: center;
     /* border: solid white; */
-    width: 800px;
+    width: 980px;
     height: max-content;
     /* margin-left: 200px; */
     padding: 50px;
+  }
+
+  .heroTitle{
+    
+      font-family: jomhuria;
+      /* font-weight: 1em; */
+      font-size: 100px;
+    
+  }
+  .heroTitle2{
+    font-family: jose;
+    font-size: 37px;
+  }
+
+  .heroPara{
+    font-family: jose;
+    font-size: 18px;
+    margin-top: 30px;
+    padding-right: 75px;
+    margin-bottom: 18px;
   }
   .animated-border-button{
     width: 200px;
     height: 50px;
     background-color: #c3073f;
-    border: 1px solid #65b5f6;
+    border: 3px solid #780d2e;
     color: white;
     font-size: 20px;
     /* font-weight: 700; */
@@ -158,6 +183,11 @@ margin-top: 10px;
     src: url(/Jomhuria-Regular.ttf);
   }
 
+  @font-face {
+    font-family: jose;
+    src: url(/JosefinSans-Regular.ttf);
+  }
+
 
 
 
@@ -209,3 +239,109 @@ margin-top: 10px;
       overflow-y: auto;
     }
   }
+
+  /* cards  */
+  .container-card{
+    display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 110px;
+      padding: 70px;
+  }
+  .card {
+    --background: linear-gradient(to left, #c3073f 0%, #ea5358 100%);
+    width: 350px;
+    height: 350px;
+    padding: 5px;
+    border-radius: 1rem;
+    overflow: visible;
+    background: #c3073f;
+    background: var(--background);
+    position: relative;
+    z-index: 1;
+   }
+   
+   .card::after {
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    transform: scale(0.8);
+    filter: blur(25px);
+    background: #c3073f;
+    background: var(--background);
+    transition: opacity .5s;
+   }
+   
+   .card-info {
+    --color: #181818;
+    background: var(--color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    border-radius: 0.7rem;
+    flex-direction: column;
+}
+   
+   
+   .card .title {
+    font-family: jose;
+    /* letter-spacing: .1em; */
+    font-size: 30px;
+   }
+
+   .card .para-card{
+    font-family: jose;
+    /* letter-spacing: .1em; */
+    font-size: 16px;
+    padding-left: 20px;
+    padding-right: 20px;
+   }
+   
+   /*Hover*/
+   .card:hover::after {
+    opacity: 0;
+   }
+   
+   .card:hover .card-info {
+    color: #7a7a7d;
+    transition: color 1s;
+   }
+   .read-more-button {
+    background-color: #c3073f;
+    border: 3px solid #780d2e;
+    color: white;
+    font-family: jose;
+    font-size: 20px;
+    /* font-weight: 700; */
+    border-radius: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+
+  .read-more-button:hover {
+    background-color: #760b2b;
+  }
+
+  .cardSection{
+    text-align: center;
+    font-family: jomhuria;
+      /* font-weight: 1em; */
+      font-size: 100px;
+      color: #ffffff;
+      margin-top: 120px;
+  }
+   
+  
