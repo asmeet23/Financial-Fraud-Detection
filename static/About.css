@@ -1,9 +1,21 @@
 * {
     box-sizing: border-box;
-    font-weight: 700;
-    font-family:Georgia, 'Times New Roman', Times, serif
+    font-weight: lighter !important;
+    
    
   }
+  @font-face {
+    font-family: jomhuria;
+    src: url(/Jomhuria-Regular.ttf);
+  }
+  
+  @font-face {
+    font-family: jose;
+    src: url(/JosefinSans-Regular.ttf);
+  }
+  
+  
+
   
   body {
 background-color: #1A1A1D;
@@ -16,6 +28,10 @@ background-color: #1A1A1D;
     margin-top: 50px;
     text-align: center;
 color: white;
+font-family: 'jomhuria';
+font-size: 70px;
+font-weight: lighter !important;
+
   }
   
   .nav {
@@ -24,6 +40,7 @@ color: white;
     width: 100%;
     background-color: #c3073f;
     position: relative;
+
   }
   
   .nav > .nav-header {
@@ -35,6 +52,9 @@ color: white;
     font-size: 30px;
     color:white;
     padding: 10px;
+    font-family: 'jomhuria';
+    font-size: 50px;
+    font-weight: lighter !important;
   
   }
   /* .nav > .nav-header > .nav-title > .logo{
@@ -49,7 +69,11 @@ margin-top: 10px;
   .nav > .nav-links {
     display: inline;
     float: right;
-    font-size: 18px;
+    font-family: 'jose';
+    /* font-weight: lighter !important; */
+    font-size: 20px;
+    /* height: 100%; */
+    
     /* height: ; */
   }
   
@@ -58,6 +82,7 @@ margin-top: 10px;
     padding: 13px 10px 13px 10px;
     text-decoration: none;
    color: white;
+ 
   }
   
   .nav > .nav-links > a:hover {
@@ -222,7 +247,8 @@ margin-top: 10px;
 
 
   #test p {
-    margin-top: 25px;
+    /* margin-top: px; */
+    margin-top: -50px;
     font-size: 21px;
     text-align: center;
     animation: fadein 2s;
@@ -230,12 +256,15 @@ margin-top: 10px;
     -webkit-animation: fadein 2s; /* Safari and Chrome */
     -o-animation: fadein 2s; /* Opera */
     color: white;
+    font-family: 'jose';
+    text-align: justify;
+  text-justify: inter-word;
 }
 .para
 {
   padding-left: 250px;
   padding-right: 250px;
-  padding-top: 40px;
+  /* padding-top: 40px; */
   padding-bottom: 50px;
 }
 @keyframes fadein {
@@ -272,6 +301,241 @@ margin-top: 10px;
 }
 
 
+
+
+
+.footer-distributed{
+	background: #1a1a1d;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	font: bold 16px jose;
+	text-align: left;
+	padding: 50px 60px 40px;
+	overflow: hidden;
+}
+
+
+
+section {
+  width: 100%;
+  display: inline-block;
+  background: #ccc;
+  height: 60vh;
+  text-align: center;
+  /* font-size: 22px; */
+  /* font-weight: 700; */
+  text-decoration: underline;
+}
+
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	float: left;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font-family: jomhuria;
+  font-weight: lighter !important;
+  font-size: 80px;
+	margin: 0 0 10px;
+}
+
+.footer-distributed h3 span{
+	color:  #5383d3;
+  margin-left: 15px;
+
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer social icons */
+
+.footer-distributed .footer-icons{
+	margin-top: 40px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	float: right;
+}
+
+.footer-distributed .footer-right p{
+	display: inline-block;
+	vertical-align: top;
+	margin: 15px 42px 0 0;
+	color: #ffffff;
+}
+
+/* The contact form */
+
+.footer-distributed form{
+	display: inline-block;
+}
+
+.footer-distributed form input,
+.footer-distributed form textarea{
+	display: block;
+	border-radius: 3px;
+	box-sizing: border-box;
+	background-color:  #1f2022;
+	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+	border: none;
+	resize: none;
+
+	font: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	color:  #d1d2d2;
+
+	width: 400px;
+	padding: 18px;
+}
+
+.footer-distributed ::-webkit-input-placeholder {
+	color:  #5c666b;
+}
+
+.footer-distributed ::-moz-placeholder {
+	color:  #5c666b;
+	opacity: 1;
+}
+
+.footer-distributed :-ms-input-placeholder{
+	color:  #5c666b;
+}
+
+
+.footer-distributed form input{
+	height: 55px;
+	margin-bottom: 15px;
+}
+
+.footer-distributed form textarea{
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.footer-distributed form button{
+  background-color: #c3073f;
+  border: 3px solid #780d2e;
+  color: white;
+  font-family: jose;
+  font-size: 20px;
+  /* font-weight: 700; */
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.footer-distributed form button:hover{
+  background-color: #760b2b;
+}
+.footer-distributed hr{
+  border-top-color:#bbb;
+  opacity:0.5;
+  margin-bottom: 80px;
+  margin-top: 50px;
+
+}
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 1000px) {
+
+	.footer-distributed {
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-company-name{
+		font-size: 12px;
+	}
+
+	.footer-distributed form input,
+	.footer-distributed form textarea{
+		width: 250px;
+	}
+
+	.footer-distributed form button{
+		padding: 10px 35px;
+	}
+
+}
+
+@media (max-width: 800px) {
+
+	.footer-distributed{
+		padding: 30px;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		float: none;
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+	.footer-distributed .footer-left{
+		margin-bottom: 40px;
+	}
+
+	.footer-distributed form{
+		margin-top: 30px;
+	}
+
+	.footer-distributed form{
+		display: block;
+	}
+
+	.footer-distributed form button{
+		float: none;
+	}
+}
 
 
 
