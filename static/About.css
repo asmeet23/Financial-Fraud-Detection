@@ -33,6 +33,10 @@ font-size: 70px;
 font-weight: lighter !important;
 
   }
+  .logo{
+    vertical-align: -4px;
+  
+  }
   
   .nav {
     
@@ -45,17 +49,17 @@ font-weight: lighter !important;
   
   .nav > .nav-header {
     display: inline;
+    margin-left: 15px;
   }
   
   .nav > .nav-header > .nav-title {
     display: inline-block;
-    font-size: 30px;
-    color:white;
-    padding: 10px;
-    font-family: 'jomhuria';
-    font-size: 50px;
-    font-weight: lighter !important;
-  
+  font-size: 50px;
+  color: white;
+  font-family: 'jomhuria';
+  /* padding: 5px; */
+  padding-left: 15px;
+  padding-top: 2px;
   }
   /* .nav > .nav-header > .nav-title > .logo{
 margin-top: 10px;
@@ -94,7 +98,15 @@ margin-top: 10px;
     display: none;
   }
 
-  
+  .heading{
+    text-align: center;
+  font-family: jomhuria;
+  /* font-weight: 1em; */
+  font-size: 100px;
+  color: #ffffff;
+  margin-top: 100px;
+  margin-bottom: 80px;
+  }
  
   
   
@@ -256,10 +268,10 @@ font-weight: lighter !important;
 
 }
   #test p {
-    border: solid 1px #ffffff;
+    border: solid 5px #c3073f;
 padding: 50px;
 border-radius: 20px;
-background-color: #c3073f;
+/* background-color: #c3073f; */
     /* margin-top: px; */
     margin-top: -40px;
     font-size: 21px;
