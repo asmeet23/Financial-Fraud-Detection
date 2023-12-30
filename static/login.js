@@ -12,7 +12,7 @@ loginForm.addEventListener('submit', (e) => {
     // Perform login validation
     if (enteredUsername === 'admin' && enteredPassword === 'password') {
         // Successful login, redirect to another page
-        window.location.href = "dashboard.html";
+        window.location.href = "/templates/dashboard.html";
     } else {
         errorMessage.textContent = "Invalid username or password.";
     }

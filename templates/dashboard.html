@@ -17,7 +17,7 @@
     <div class="nav">
       <!-- <input type="checkbox" id="nav-check"> -->
       <div class="nav-header">
-        <img src="/logo.svg" class="logo" alt="">
+        <img src="/static/images/logo.svg" class="logo" alt="">
         <div class="nav-title">
           Vanguard
         </div>
@@ -33,9 +33,14 @@
       <div class="nav-links">
         <a href="" target="_blank">Home</a>
         <a href="" target="_blank">Check for Fraud</a>
-        <a href="" target="_blank">History</a>
+        <a href= "" target = "_blank"><form action="{{ url_for('submit') }}" method="post">
+          <input type="submit" value="History">
+      </form></a>
         <a href="" target="_blank">Manage</a>
-        <a href="" target="_blank">About us</a>
+        
+        
+        <a href="{{ url_for('about') }}" target="_blank">About us</a>
+      
       </div>
     </div>
     <!-- hero-section  -->
@@ -56,7 +61,7 @@
         <button class="animated-border-button">Read more</button>
       </div>
       <div class="picture">
-        <img src="/images/7176685.jpg" alt="" height="300px">
+        <img src="/static/images/7176685.jpg" alt="" height="300px">
       </div>
 
     </div>
@@ -103,27 +108,27 @@
     <div class="innerContainer active">
       <div class="slider">
         <div class="slide">
-          <div style="background:url('/images/Women_Band_e0c9dca5fa.jpeg')">
+          <div style="background:url('/static/images/Women_Band_e0c9dca5fa.jpeg')">
           </div>
         </div>
         <div class="slide">
-          <div style="background:url('/images/Cyber_Cirme_Award_Event_32be41e087.jpeg')">
+          <div style="background:url('/static/images/Cyber_Cirme_Award_Event_32be41e087.jpeg')">
           </div>
         </div>
         <div class="slide">
-          <div style="background:url('/images/DGP_Disk1_3a1bc13dbc.jpeg')">
+          <div style="background:url('/static/images/DGP_Disk1_3a1bc13dbc.jpeg')">
           </div>
         </div>
         <div class="slide">
-          <div style="background:url('/images/Drill_Practice_3dae49ed65.jpeg')">
+          <div style="background:url('/static/images/Drill_Practice_3dae49ed65.jpeg')">
           </div>
         </div>
         <div class="slide">
-          <div style="background:url('/images/RPA_Election_commite_c4e65ba68d.jpeg')">
+          <div style="background:url('/static/images/2_594c72b78a.png')">
           </div>
         </div>
         <div class="slide">
-          <div style="background:url('/images/2_594c72b78a.png')">
+          <div style="background:url('/static/images/RPA_Election_commite_c4e65ba68d.jpeg')">
           </div>
         </div>
 

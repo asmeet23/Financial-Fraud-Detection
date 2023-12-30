@@ -13,7 +13,7 @@
   <div class="login-container">
     <h2>Welcome!</h2>
     <h3>Please login to continue</h3>
-    <form id="form" class="form1" action="post">
+    <form id="form" class="form1" action="/route_to_dashboard">
       <span>
         <div><input class="text-input text-input--material" id="Username" placeholder="Username" type="text" required></div>
         <br />
@@ -24,21 +24,7 @@
       <button class="button button--large--cta" style="width: 95%; margin-top: 60px; border-radius:50px;" onClick="auth(event)">Login</button>
    </form>
    
-   <script>
-      function auth(event) {
-            event.preventDefault();
-  
-            var email = document.getElementById("Username").value;
-            var password = document.getElementById("password").value;
-  
-            if (email === "user" && password === "user") {
-                 window.location.replace("/templates/dashboard.html");
-            } else {
-                alert("Invalid information");
-                return;
-            }
-      }
-   </script> 
+  <script src="/static/login.js"></script>
    
   </div>
   <footer><a href="" target="blank"><img src="https://www.polymer-project.org/images/logos/p-logo.svg"></a>

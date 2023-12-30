@@ -6,12 +6,12 @@
   }
   @font-face {
     font-family: jomhuria;
-    src: url(/Jomhuria-Regular.ttf);
+    src: url(/static/Jomhuria-Regular.ttf);
   }
   
   @font-face {
     font-family: jose;
-    src: url(/JosefinSans-Regular.ttf);
+    src: url(/static/JosefinSans-Regular.ttf);
   }
   
   

@@ -46,7 +46,9 @@
 </head>
 <body>
     <h1>Fraud Detection</h1>
-    <form action="/predict" method="post">
+    <form action="/submit" method="POST" >
+        <label for="name">name:</label><br>
+        <input type="text" name="name"><br>
         <label for="Unnamed">Unnamed:</label><br>
         <input type="text" id="Unnamed" name="Unnamed"><br>
         <label for="cc_num">Credit Card Number:</label><br>
@@ -57,11 +59,13 @@
         <input type="text" id="zip" name="zip"><br>
         <label for="city_pop">City Population:</label><br>
         <input type="text" id="city_pop" name="city_pop"><br>
-        <label for="trans_num">Transaction Number:</label><br>
-        <input type="text" id="trans_num" name="trans_num"><br>
+       
         <label for="unix_time">Unix Time:</label><br>
         <input type="text" id="unix_time" name="unix_time"><br>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit"> 
+    </form>
+    <form action="/data" method="GET">
+        <input type="submit" value="View Data">
     </form>
 </body>
 </html>
