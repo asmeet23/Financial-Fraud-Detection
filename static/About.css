@@ -245,10 +245,23 @@ margin-top: 10px;
   }
 
 
+.meettheteam
+{
+  margin-top: 0px;
+  text-align: center;
+color: white;
+font-family: 'jomhuria';
+font-size: 70px;
+font-weight: lighter !important;
 
+}
   #test p {
+    border: solid 1px #ffffff;
+padding: 50px;
+border-radius: 20px;
+background-color: #c3073f;
     /* margin-top: px; */
-    margin-top: -50px;
+    margin-top: -40px;
     font-size: 21px;
     text-align: center;
     animation: fadein 2s;
