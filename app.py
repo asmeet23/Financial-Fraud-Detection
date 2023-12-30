@@ -111,7 +111,7 @@ def submit():
         db.commit()
         
     # Retrieve data including 'result' column
-        cursor.execute('SELECT name, cc_num, amount, zip, trans_num, unix_time, result FROM userdata')
+        cursor.execute('SELECT name,Unn, cc_num, amount, zip, city_pop,trans_num,  result FROM userdata')
         data = cursor.fetchall()
 
 # Pass the data to the template
