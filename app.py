@@ -111,11 +111,11 @@ def submit():
         db.commit()
         
     # Retrieve data including 'result' column
-        cursor.execute('SELECT name,Unn, cc_num, amount, zip, city_pop,trans_num,  result FROM userdata')
+        cursor.execute('SELECT name , Unn , cc_num , amount , zip , city_pop , trans_num ,unix_time , result FROM userdata')
         data = cursor.fetchall()
 
-# Pass the data to the template
-        return render_template('display.html', data=data)
+# Pass the data to the templat
+        return render_template('index.html', data=data)
  
 
 # Route for displaying the data
