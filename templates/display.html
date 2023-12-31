@@ -35,6 +35,7 @@
             <th>City Population</th>
             <th>Transaction Number</th>
             <th>Unix Time</th>
+            <th>prediction</th>
             <th>Result</th>
         </tr>
         {% for row in data %}
@@ -48,6 +49,7 @@
             <td>{{ row[6] }}</td>
             <td>{{row [7] }}</td>
             <td>{{row [8] }}</td>
+            <td>{{row [9] }}</td>
         </tr>
         {% endfor %}
     </table>

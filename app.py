@@ -8,12 +8,13 @@ from flask import render_template
 import pandas as pd
 import random
 from flask import url_for
+import struct
 
 app = Flask(__name__)
 
 scaler=StandardScaler()
 # Load the pre-trained machine learning model
-model=pickle.load(open(r'C:\Users\basim\RJPOLICE_HACK_1474_A-team_7\ANNmodel.pkl','rb'))
+model=joblib.load(open(r'C:\Users\basim\RJPOLICE_HACK_1474_A-team_7\ANNmodel.pkl','rb'))
 
 
 #code for the sql insertion view and deletion of the data
@@ -37,13 +38,14 @@ with app.app_context():
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS userdata (
             name TEXT,
-            Unn TEXT,
-            cc_num TEXT,
+            Unn INTEGER,
+            cc_num INTEGER,
             amount INTEGER,
             zip INTEGER,
             city_pop INTEGER,
             trans_num INTEGER,
             unix_time INTEGER,
+            prediction INTEGER,
             result TEXT
         )
     ''')
@@ -75,7 +77,8 @@ def submit():
     amt = request.form.get('amt',False)
     zip = request.form.get('zip',False)
     city_pop = request.form.get('city_pop',False)
-    trans_num = random.randint(1000000000, 9999999999)
+    trans_num = request.form.get('trans_num',False)
+    
     unix_time = request.form.get('unix_time',False)
 
     # Generate a random transaction number 
@@ -101,21 +104,22 @@ def submit():
         input_data_scaled = scaler.fit_transform(input_data_array)
 
 # Make predictions using the model
+      
         prediction = model.predict(input_data_scaled)
-        if(prediction[0][0] > 0.5):
+        if(prediction[0][0]< 0.5):
          result="Fraud"
         else:
          result="Not Fraud"
-         
-        cursor.execute('INSERT INTO userdata (name, Unn, cc_num, amount, zip, city_pop, trans_num,unix_time,result) VALUES (?, ?, ?, ?, ?, ?, ?,?,?)', (name, Unn, cc_num, amt, zip, city_pop, trans_num,unix_time,result))
+         print(prediction[0][0])
+        cursor.execute('INSERT INTO userdata (name, Unn, cc_num, amount, zip, city_pop, trans_num,unix_time,prediction,result) VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?)', (name, Unn, cc_num, amt, zip, city_pop, trans_num,unix_time,prediction,result))
         db.commit()
         
     # Retrieve data including 'result' column
-        cursor.execute('SELECT name , Unn , cc_num , amount , zip , city_pop , trans_num ,unix_time , result FROM userdata')
+        cursor.execute('SELECT name , Unn , cc_num , amount , zip , city_pop , trans_num ,unix_time , prediction,result FROM userdata')
         data = cursor.fetchall()
 
 # Pass the data to the templat
-        return render_template('index.html', data=data)
+    return render_template('index.html', data=data)
  
 
 # Route for displaying the data
