@@ -1,0 +1,413 @@
+
+  @font-face {
+    font-family: jomhuria;
+    src: url(/static/Jomhuria-Regular.ttf);
+  }
+  
+  @font-face {
+    font-family: jose;
+    src: url(/static/JosefinSans-Regular.ttf);
+  }
+  
+  
+
+  * {
+    box-sizing: border-box;
+    /* font-weight: 700;  */
+    /* font-family:Georgia, 'Times New Roman', Times, serif */
+  
+  }
+  
+  body {
+    /* background-image: url(/dark-black-polygonal-illustration-which-consist-triangles-geometric-background-origami-style-with-grad.jpg); */
+    margin: 0px;
+    font-family: 'jomhuria';
+    background-size: cover;
+    background-color: #1a1a1d;
+  }
+  
+  .logo{
+    vertical-align: -4px;
+  
+  }
+  
+  .nav {
+  
+    height: 50px;
+    width: 100%;
+    background-color: #c3073f;
+    position: relative;
+  }
+  
+  .nav>.nav-header {
+    display: inline;
+    margin-left: 15px;
+  }
+  
+  .nav>.nav-header>.nav-title {
+    display: inline-block;
+    font-size: 50px;
+    color: white;
+    /* padding: 5px; */
+    padding-left: 15px;
+    padding-top: 2px;
+  
+  }
+  
+  /* .nav > .nav-header > .nav-title > .logo{
+  margin-top: 10px;
+    } */
+  
+  
+  .nav>.nav-btn {
+    display: none;
+  }
+  
+  .nav>.nav-links {
+    display: inline;
+    float: right;
+    font-family: jose;
+    margin-top: -28px;
+    font-size: 20px;
+    /* height: ; */
+  }
+  .nav>.nav-links>f{
+    padding-top: 10px;
+  }
+  .nav>.nav-links>a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .nav>.nav-links>a:hover {
+    background-color: rgba(152, 152, 152, 0.3);
+    transition: all 0.3s ease-in;
+  }
+  
+  .nav>#nav-check {
+    display: none;
+  }
+/* form  */
+form {
+    width: 300px;
+    font-family: jose;
+    color: white;
+    font-size: 18px;
+    margin: 0 auto;
+}
+.headIndex{
+    text-align: center;
+    font-family: jomhuria;
+    /* font-weight: 1em; */
+    font-size: 100px;
+    color: #ffffff;
+    margin-top: 80px;
+    margin-bottom: 50px;
+}
+label {
+    display: block;
+    margin-top: 20px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #929295;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #c3073f;
+  border: 3px solid #780d2e;
+  color: white;
+  font-family: jose;
+  font-size: 20px;
+  border-radius: 10px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #760b2b;
+}
+
+/* footer  */
+.footer-distributed{
+	background: #1a1a1d;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	font: bold 16px jose;
+	text-align: left;
+	padding: 50px 60px 40px;
+	overflow: hidden;
+}
+
+
+
+section {
+  width: 100%;
+  display: inline-block;
+  background: #ccc;
+  height: 60vh;
+  text-align: center;
+  /* font-size: 22px; */
+  /* font-weight: 700; */
+  text-decoration: underline;
+}
+
+
+/* Footer left */
+
+.footer-distributed .footer-left{
+	float: left;
+}
+
+/* The company logo */
+
+.footer-distributed h3{
+	color:  #ffffff;
+	font-family: jomhuria;
+  font-weight: lighter !important;
+  font-size: 80px;
+	margin: 0 0 10px;
+}
+
+.footer-distributed h3 span{
+	color:  #5383d3;
+  margin-left: 15px;
+
+}
+
+/* Footer links */
+
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 0 0 10px;
+	padding: 0;
+}
+
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+
+/* Footer social icons */
+
+.footer-distributed .footer-icons{
+	margin-top: 40px;
+}
+
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+
+/* Footer Right */
+
+.footer-distributed .footer-right{
+	float: right;
+    overflow: hidden;
+
+}
+
+.footer-distributed .footer-right p{
+	display: inline-block;
+	vertical-align: top;
+	margin: 15px 42px 0 0;
+	color: #ffffff;
+}
+
+/* The contact form */
+
+.footer-distributed form{
+	display: inline-block;
+}
+
+.footer-distributed form input,
+.footer-distributed form textarea{
+	display: block;
+	border-radius: 3px;
+	box-sizing: border-box;
+	background-color:  #1f2022;
+	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+	border: none;
+	resize: none;
+
+	font: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	color:  #d1d2d2;
+
+	width: 400px;
+	padding: 18px;
+}
+
+.footer-distributed ::-webkit-input-placeholder {
+	color:  #5c666b;
+}
+
+.footer-distributed ::-moz-placeholder {
+	color:  #5c666b;
+	opacity: 1;
+}
+
+.footer-distributed :-ms-input-placeholder{
+	color:  #5c666b;
+}
+
+
+.footer-distributed form input{
+	height: 55px;
+	margin-bottom: 15px;
+}
+
+.footer-distributed form textarea{
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.footer-distributed form button{
+  background-color: #c3073f;
+  border: 3px solid #780d2e;
+  color: white;
+  font-family: jose;
+  font-size: 20px;
+  /* font-weight: 700; */
+  border-radius: 10px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: inline-block;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+.footer-distributed form button:hover{
+  background-color: #760b2b;
+}
+.footer-distributed hr{
+  border-top-color:#bbb;
+  opacity:0.5;
+  margin-bottom: 80px;
+  margin-top: 50px;
+
+}
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 1000px) {
+
+	.footer-distributed {
+		font: bold 14px sans-serif;
+	}
+
+	.footer-distributed .footer-company-name{
+		font-size: 12px;
+	}
+
+	.footer-distributed form input,
+	.footer-distributed form textarea{
+		width: 250px;
+	}
+
+	.footer-distributed form button{
+		padding: 10px 35px;
+	}
+
+}
+
+@media (max-width: 800px) {
+
+	.footer-distributed{
+		padding: 30px;
+	}
+
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-right{
+		float: none;
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+	.footer-distributed .footer-left{
+		margin-bottom: 40px;
+	}
+
+	.footer-distributed form{
+		margin-top: 30px;
+	}
+
+	.footer-distributed form{
+		display: block;
+	}
+
+	.footer-distributed form button{
+		float: none;
+	}
+}
+
+
+
+
+  @media (min-width: 640px) {
+    .blog-card {
+      flex-direction: row;
+      max-width: 700px;
+    }
+    .blog-card .meta {
+      flex-basis: 40%;
+      height: auto;
+    }
+    .blog-card .description {
+      flex-basis: 60%;
+    }
+    .blog-card .description:before {
+      transform: skewX(-3deg);
+      content: "";
+      background: #fff;
+      width: 30px;
+      position: absolute;
+      left: -10px;
+      top: 0;
+      bottom: 0;
+      z-index: -1;
+    }
+    .blog-card.alt {
+      flex-direction: row-reverse;
+    }
+    .blog-card.alt .description:before {
+      left: inherit;
+      right: -10px;
+      transform: skew(3deg);
+    }
+    .blog-card.alt .details {
+      padding-left: 25px;
+    }
+  }
