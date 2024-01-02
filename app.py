@@ -9,12 +9,16 @@ import pandas as pd
 import random
 from flask import url_for
 import struct
+from sklearn.preprocessing import LabelEncoder
+from keras.models import load_model
 
 app = Flask(__name__)
 
-scaler=StandardScaler()
+encoder=pickle.load(open('encoder.pkl','rb'))
+
+scaler=pickle.load(open('min_max_scaler.pkl','rb'))
 # Load the pre-trained machine learning model
-model=joblib.load(open(r'C:\Users\basim\RJPOLICE_HACK_1474_A-team_7\ANNmodel.pkl','rb'))
+model=load_model('my_model.h5')
 
 
 #code for the sql insertion view and deletion of the data
@@ -45,7 +49,7 @@ with app.app_context():
             city_pop INTEGER,
             trans_num INTEGER,
             unix_time INTEGER,
-            prediction INTEGER,
+            prediction Integer,
             result TEXT
         )
     ''')
@@ -78,48 +82,34 @@ def submit():
     zip = request.form.get('zip',False)
     city_pop = request.form.get('city_pop',False)
     trans_num = request.form.get('trans_num',False)
-    
     unix_time = request.form.get('unix_time',False)
+    ans=encoder.transform([trans_num])
+    # ans=trans_num
+    
 
-    # Generate a random transaction number 
    
-
     # Insert the form data into the database
     with app.app_context():
         db = get_db()
         cursor = db.cursor()
-        Unn2=Unn
-        cc_num2=cc_num
-        amt2=amt
-        zip2=zip
-        city_pop2=city_pop
-        trans_num2=trans_num
-        unix_time2=unix_time
-        
-        data = {'Unnamed':Unn2,'cc_num': [cc_num2], 'amt': [amt2], 'zip': [zip2], 'city_pop': [city_pop2], 'trans_num': [trans_num2], 'unix_time': [unix_time2]}
+        data = {'Unnamed':Unn,'cc_num': [cc_num], 'amt': [amt], 'zip': [zip], 'city_pop': [city_pop], 'trans_num': [ans], 'unix_time': [unix_time]}
         input_data = pd.DataFrame(data)
-        input_data_array = input_data.values
-        
-# Scale the input data using the same scaler used for training
-        input_data_scaled = scaler.fit_transform(input_data_array)
-
-# Make predictions using the model
-      
-        prediction = model.predict(input_data_scaled)
-        if(prediction[0][0]< 0.5):
+        print(data)
+        input_data = np.array(input_data).reshape(1, -1)
+        input_data_scaled = scaler.transform(input_data)
+        prediction= model.predict(input_data_scaled)
+        RP=round(prediction[0][0])
+        print("ans:",ans)
+        print("prediction-->",prediction[0][0])
+        if(prediction[0][0]>0.3):
          result="Fraud"
         else:
          result="Not Fraud"
-         print(prediction[0][0])
-        cursor.execute('INSERT INTO userdata (name, Unn, cc_num, amount, zip, city_pop, trans_num,unix_time,prediction,result) VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?)', (name, Unn, cc_num, amt, zip, city_pop, trans_num,unix_time,prediction,result))
+       
+         
+        cursor.execute('INSERT INTO userdata (name, Unn, cc_num, amount, zip, city_pop, trans_num,unix_time,prediction,result) VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?)', (name, Unn, cc_num, amt, zip, city_pop, trans_num,unix_time,RP,result))
         db.commit()
-        
-    # Retrieve data including 'result' column
-        cursor.execute('SELECT name , Unn , cc_num , amount , zip , city_pop , trans_num ,unix_time , prediction,result FROM userdata')
-        data = cursor.fetchall()
-
-# Pass the data to the templat
-    return render_template('index.html', data=data)
+        return render_template('index.html', prediction=prediction[0][0],result=result, css=url_for('static', filename='index.css'))
  
 
 # Route for displaying the data

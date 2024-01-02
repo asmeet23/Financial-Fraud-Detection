@@ -21,6 +21,19 @@
         h1 {
             text-align: center;
         }
+        tr.invalid {
+            background-color: yellow;
+        }
+        
+        /* Highlight fraud transactions in red */
+        tr.fraud {
+            background-color: red;
+        }
+        
+        /* Highlight non-fraud transactions in green */
+        tr.Not-fraud {
+            background-color: green;
+        }
     </style>
 </head>
 <body>
@@ -39,7 +52,10 @@
             <th>Result</th>
         </tr>
         {% for row in data %}
-        <tr>
+        <tr class="{% if row[9] == 'Fraud' %}fraud
+        {% elif row[9]=='Not Fraud' %}Not-fraud
+        {% else %}invalid
+        {% endif %}">
             <td>{{ row[0] }}</td>
             <td>{{ row[1] }}</td>
             <td>{{ row[2] }}</td>
@@ -56,3 +72,4 @@
 </body>
 </html>
 
+g
