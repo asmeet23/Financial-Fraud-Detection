@@ -44,18 +44,23 @@
             <!-- <td>{{row[10] }}</td>
             <td>{{row [11] }}</td> -->
             <td>{{row [8] }}</td>
+            <!-- <td><button class="expand-btn" onclick="redirectToDetails('{{ row[0] }}')">Expand</button></td> -->
             <td><button class="expand-btn" onclick="redirectToDetails('{{ row[0] }}')">Expand</button></td>
+
 
         </tr>
         {% endfor %}
     </table>
+    <!-- Update the script in the display.html file -->
     <script>
         // Function to redirect to the details template with the selected row's information
         function redirectToDetails(name) {
-            // You may want to replace 'details_template' with the actual URL or route for your details template
-            window.location.href = '/details_template?name=' + name;
+            // Redirect to the details page with the specific name parameter
+            window.location.href = '/details_template/' + name;
         }
     </script>
+    
+
 </body>
 </html>
 

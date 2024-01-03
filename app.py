@@ -138,7 +138,16 @@ def delete_data():
         db.commit()
     
     return render_template('display.html')
-    
+
+@app.route('/details_template/<name>')
+def details_template(name):
+    with app.app_context():
+        db = get_db()
+        cursor = db.cursor()
+        cursor.execute('SELECT * FROM userdata WHERE name = ?', (name,))
+        details = cursor.fetchone()
+
+    return render_template('details.html', details=details)
    
 if __name__ == '__main__':
     app.run(debug=True)

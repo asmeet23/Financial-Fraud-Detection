@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Details</title>
+    <!-- Add any necessary CSS styles here -->
+</head>
+<body>
+    <h1>Details for Transaction</h1>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Bank Account Number</th>
+            <th>Unn</th>
+            <th>Credit Card Number</th>
+            <th>Amount</th>
+            <th>Zip</th>
+            <th>City Population</th>
+            <th>Transaction Number</th>
+            <th>Lattitude</th>
+            <th>Longitude</th>
+            <th>Unix Time</th>
+            <th>Prediction</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td>{{ details[0] }}</td>
+            <td>{{ details[1] }}</td>
+            <td>{{ details[2] }}</td>
+            <td>{{ details[3] }}</td>
+            <td>{{ details[4] }}</td>
+            <td>{{ details[5] }}</td>
+            <td>{{ details[6] }}</td>
+            <td>{{ details[7] }}</td>
+            <td>{{ details[8] }}</td>
+            <td>{{ details[9] }}</td>
+            <td>{{ details[10] }}</td>
+            <td>{{ details[11] }}</td>
+            <td>{{ details[12] }}</td>
+            <td>{{ details[13] }}</td>
+        </tr>
+    </table>
+
+    <a href="{{ url_for('display_data') }}">Back to Data Display</a>
+
+    <!-- Add any necessary JavaScript scripts here -->
+</body>
+</html>
