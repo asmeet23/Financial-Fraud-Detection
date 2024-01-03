@@ -41,19 +41,22 @@
     <table>
         <tr>
             <th>Name</th>
+            <th>Bank_acc_no </th>
             <th>Unn</th>
             <th>Credit Card Number</th>
             <th>Amount</th>
-            <th>Zip</th>
-            <th>City Population</th>
+            <!-- <th>Zip</th> -->
+            <!-- <th>City Population</th> -->
             <th>Transaction Number</th>
-            <th>Unix Time</th>
-            <th>prediction</th>
+            <th>Lattitude</th>
+            <th>Longitude</th>
+            <!-- <th>Unix_time</th> -->
+            <!-- <th>prediction</th> -->
             <th>Result</th>
         </tr>
         {% for row in data %}
-        <tr class="{% if row[9] == 'Fraud' %}fraud
-        {% elif row[9]=='Not Fraud' %}Not-fraud
+        <tr class="{% if row[8] == 'Fraud' %}fraud
+        {% elif row[8]=='Not Fraud' %}Not-fraud
         {% else %}invalid
         {% endif %}">
             <td>{{ row[0] }}</td>
@@ -64,8 +67,12 @@
             <td>{{ row[5] }}</td>
             <td>{{ row[6] }}</td>
             <td>{{row [7] }}</td>
+            <!-- <td>{{row [8] }}</td>
+            <td>{{row [9] }}</td> -->
+            
+            <!-- <td>{{row[10] }}</td>
+            <td>{{row [11] }}</td> -->
             <td>{{row [8] }}</td>
-            <td>{{row [9] }}</td>
         </tr>
         {% endfor %}
     </table>

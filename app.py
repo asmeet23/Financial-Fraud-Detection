@@ -9,6 +9,8 @@ import random
 from flask import url_for
 from sklearn.preprocessing import LabelEncoder
 from keras.models import load_model
+import folium
+import geocoder
 
 app = Flask(__name__)
 
@@ -40,12 +42,15 @@ with app.app_context():
     cursor.execute('''
         CREATE TABLE IF NOT EXISTS userdata (
             name TEXT,
+            Bank_acc_no INTEGER,
             Unn INTEGER,
             cc_num INTEGER,
             amount INTEGER,
             zip INTEGER,
             city_pop INTEGER,
             trans_num INTEGER,
+            Lattitude REAL,
+            Longitude REAL,
             unix_time INTEGER,
             prediction Integer,
             result TEXT
@@ -84,7 +89,7 @@ def submit():
     ans=encoder.fit_transform([trans_num])
     # ans=trans_num
     
-
+   
    
     # Insert the form data into the database
     with app.app_context():
@@ -97,15 +102,18 @@ def submit():
         input_data_scaled = scaler.transform(input_data)
         prediction= model.predict(input_data_scaled)
         RP=round(prediction[0][0])
-        print("ans:",ans)
-        print("prediction-->",prediction[0][0])
+        # print("ans:",ans)
+        # print("prediction-->",prediction[0][0])
         if(prediction[0][0]>0.3):
          result="Fraud"
         else:
          result="Not Fraud"
-       
+         g = geocoder.ip('me')
+         if g.latlng:
+          latitude, longitude = g.latlng
+          Bank_acc_no=random.randint(1000000000,9999999999)
          
-        cursor.execute('INSERT INTO userdata (name, Unn, cc_num, amount, zip, city_pop, trans_num,unix_time,prediction,result) VALUES (?, ?, ?, ?, ?, ?, ?,?,?,?)', (name, Unn, cc_num, amt, zip, city_pop, trans_num,unix_time,RP,result))
+        cursor.execute('INSERT INTO userdata (name,Bank_acc_no, Unn, cc_num, amount, zip, city_pop, trans_num,Lattitude,Longitude,unix_time,prediction,result) VALUES (?, ?, ?, ?, ?,?, ?,?, ?,?,?,?,?)', (name,Bank_acc_no, Unn, cc_num, amt, zip, city_pop, trans_num,latitude,longitude,unix_time,RP,result))
         db.commit()
         return render_template('index.html', prediction=prediction[0][0],result=result, css=url_for('static', filename='index.css'))
  
@@ -116,7 +124,7 @@ def display_data():
     with app.app_context():
         db = get_db()
         cursor = db.cursor()
-        cursor.execute('SELECT * FROM userdata')
+        cursor.execute('SELECT name, Bank_acc_no,Unn,cc_num,amount,trans_num,Lattitude,Longitude,result FROM userdata')
         data = cursor.fetchall()
     
     return render_template('display.html', data=data)
