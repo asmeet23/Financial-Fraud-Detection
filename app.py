@@ -72,9 +72,9 @@ def route_to_dashboard():
 def about():
     return render_template('About.html',css=url_for('static', filename='About.css'))
 
-# @app.route('/submit')
-# def home():
-#        return render_template('index.html', css=url_for('static', filename='index.css'))
+# @app.route('/data')
+# def data():
+#        return render_template('display.html', css=url_for('static', filename='display.css'))
 
 @app.route('/submit', methods=['POST'])
 def submit():
@@ -89,7 +89,12 @@ def submit():
     ans=encoder.fit_transform([trans_num])
     # ans=trans_num
     
-   
+    g = geocoder.ip('me')
+    if g.latlng:
+     latitude, longitude = g.latlng
+ 
+     Bank_acc_no=random.randint(1000000000,9999999999)
+     Bank_acc_no=Bank_acc_no
    
     # Insert the form data into the database
     with app.app_context():
@@ -108,10 +113,8 @@ def submit():
          result="Fraud"
         else:
          result="Not Fraud"
-         g = geocoder.ip('me')
-         if g.latlng:
-          latitude, longitude = g.latlng
-          Bank_acc_no=random.randint(1000000000,9999999999)
+         
+        # Bank_acc_no=random.randint(1000000000,9999999999)
          
         cursor.execute('INSERT INTO userdata (name,Bank_acc_no, Unn, cc_num, amount, zip, city_pop, trans_num,Lattitude,Longitude,unix_time,prediction,result) VALUES (?, ?, ?, ?, ?,?, ?,?, ?,?,?,?,?)', (name,Bank_acc_no, Unn, cc_num, amt, zip, city_pop, trans_num,latitude,longitude,unix_time,RP,result))
         db.commit()

@@ -1,20 +1,56 @@
+*{
+    box-sizing: border-box;
+   
+}
 table {
     width: 100%;
     border-collapse: collapse;
 }
+h1{
+    color: white;
+
+}
+
+@font-face {
+    font-family: jomhuria;
+    src: url(/static/Jomhuria-Regular.ttf);
+  }
+  
+  @font-face {
+    font-family: jose;
+    src: url(/static/JosefinSans-Regular.ttf);
+  }
+  
+  
+  
+    body {
+       
+        background-color: #1a1a1d;
+        /* color: white; */
+        /* font-size: x-large; */
+    }  
+    
+tr {
+    font-family: jomhuria;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #ddd;
+    font-size: 30px;
+    
+}
 
 th, td {
-    padding: 8px;
+    padding: 20px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
-tr:nth-child(even) {
+/* tr:nth-child(even) {
     background-color: #f2f2f2;
-}
+} */
 
 h1 {
     text-align: center;
+    font-family: jose;
 }
 tr.invalid {
     background-color: yellow;
@@ -27,26 +63,46 @@ tr.fraud {
 
 /* Highlight non-fraud transactions in green */
 tr.Not-fraud {
-    background-color: green;
+    background-color: green; 
 }
+
+
+
 /* Style for the expand button */
 .expand-btn {
     cursor: pointer;
-    background-color: #4CAF50;
+    background-color: #c3073f;
     color: white;
     border: none;
     padding: 5px 10px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
+    font-size: 15px;
     margin: 2px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
+    border-radius: 20px;
+    height: 37px;
 }
 
 .expand-btn:hover {
     background-color: white;
     color: black;
-    border: 1px solid #4CAF50;
+    /* border: 1px solid #4CAF50; */
+    transition: all 0.7s ease;   
 }
+
+
+tr
+
+h1,tr{
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
