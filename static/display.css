@@ -1,0 +1,52 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+h1 {
+    text-align: center;
+}
+tr.invalid {
+    background-color: yellow;
+}
+
+/* Highlight fraud transactions in red */
+tr.fraud {
+    background-color: red;
+}
+
+/* Highlight non-fraud transactions in green */
+tr.Not-fraud {
+    background-color: green;
+}
+/* Style for the expand button */
+.expand-btn {
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.expand-btn:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid #4CAF50;
+}

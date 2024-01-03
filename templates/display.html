@@ -2,39 +2,8 @@
 <html>
 <head>
     <title>Data Display</title>
-    <style>
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        
-        th, td {
-            padding: 8px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        
-        h1 {
-            text-align: center;
-        }
-        tr.invalid {
-            background-color: yellow;
-        }
-        
-        /* Highlight fraud transactions in red */
-        tr.fraud {
-            background-color: red;
-        }
-        
-        /* Highlight non-fraud transactions in green */
-        tr.Not-fraud {
-            background-color: green;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/display.css">
+
 </head>
 <body>
     <h1>Data from Database</h1>
@@ -53,6 +22,8 @@
             <!-- <th>Unix_time</th> -->
             <!-- <th>prediction</th> -->
             <th>Result</th>
+            <th>Action</th>
+
         </tr>
         {% for row in data %}
         <tr class="{% if row[8] == 'Fraud' %}fraud
@@ -73,9 +44,18 @@
             <!-- <td>{{row[10] }}</td>
             <td>{{row [11] }}</td> -->
             <td>{{row [8] }}</td>
+            <td><button class="expand-btn" onclick="redirectToDetails('{{ row[0] }}')">Expand</button></td>
+
         </tr>
         {% endfor %}
     </table>
+    <script>
+        // Function to redirect to the details template with the selected row's information
+        function redirectToDetails(name) {
+            // You may want to replace 'details_template' with the actual URL or route for your details template
+            window.location.href = '/details_template?name=' + name;
+        }
+    </script>
 </body>
 </html>
 
