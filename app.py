@@ -1,6 +1,5 @@
 from flask import Flask, request, jsonify,request, g
 import sqlite3
-import joblib
 from sklearn.preprocessing import StandardScaler
 import pickle
 import numpy as np
@@ -8,13 +7,12 @@ from flask import render_template
 import pandas as pd
 import random
 from flask import url_for
-import struct
 from sklearn.preprocessing import LabelEncoder
 from keras.models import load_model
 
 app = Flask(__name__)
 
-encoder=pickle.load(open('encoder.pkl','rb'))
+encoder=LabelEncoder()
 
 scaler=pickle.load(open('min_max_scaler.pkl','rb'))
 # Load the pre-trained machine learning model
@@ -83,7 +81,7 @@ def submit():
     city_pop = request.form.get('city_pop',False)
     trans_num = request.form.get('trans_num',False)
     unix_time = request.form.get('unix_time',False)
-    ans=encoder.transform([trans_num])
+    ans=encoder.fit_transform([trans_num])
     # ans=trans_num
     
 
