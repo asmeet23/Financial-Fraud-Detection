@@ -86,11 +86,12 @@ margin-top: 10px;
     padding: 13px 10px 13px 10px;
     text-decoration: none;
    color: white;
+   height: 100%;
  
   }
   
   .nav > .nav-links > a:hover {
-    background-color: rgba(152, 152, 152, 0.3);
+    background-color: #1A1A1D;
     transition: all 0.3s ease-in;
   }
   

@@ -3,13 +3,25 @@
    
 }
 table {
+
     width: 100%;
-    border-collapse: collapse;
+    /* border-collapse: collapse; */
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
 }
 h1{
     color: white;
 
 }
+/* .heading2{
+ border: solid 5px #c3073f;
+   margin-bottom: 30px;
+   width: 500px;
+   border-radius: 20px;
+   animation: fadeIn 2s forwards;
+} */
 
 @font-face {
     font-family: jomhuria;
@@ -36,19 +48,19 @@ tr {
     border-bottom: 1px solid #ddd;
     font-size: 30px;
     
+    
 }
 
 th, td {
     padding: 20px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    
 }
 
-/* tr:nth-child(even) {
-    background-color: #f2f2f2;
-} */
 
 h1 {
+
     text-align: center;
     font-family: jose;
 }
@@ -93,7 +105,15 @@ tr.Not-fraud {
 }
 
 
-tr
+.tablee
+{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+ 
+}
 
 h1,tr{
     opacity: 0;
