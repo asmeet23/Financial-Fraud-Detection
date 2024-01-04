@@ -19,64 +19,65 @@ body {
 }
 
 .nav {
-
+    
   height: 50px;
   width: 100%;
   background-color: #c3073f;
   position: relative;
+
 }
 
-.nav>.nav-header {
+.nav > .nav-header {
   display: inline;
   margin-left: 15px;
 }
 
-.nav>.nav-header>.nav-title {
+.nav > .nav-header > .nav-title {
   display: inline-block;
-  font-size: 50px;
-  color: white;
-  /* padding: 5px; */
-  padding-left: 15px;
-  padding-top: 2px;
-
+font-size: 50px;
+color: white;
+font-family: 'jomhuria';
+/* padding: 5px; */
+padding-left: 15px;
+padding-top: 2px;
 }
-
 /* .nav > .nav-header > .nav-title > .logo{
 margin-top: 10px;
-  } */
+} */
 
 
-.nav>.nav-btn {
+.nav > .nav-btn {
   display: none;
 }
 
-.nav>.nav-links {
+.nav > .nav-links {
   display: inline;
   float: right;
-  font-family: jose;
+  font-family: 'jose';
+  /* font-weight: lighter !important; */
   font-size: 20px;
+  /* height: 100%; */
+  
   /* height: ; */
 }
-.nav>.nav-links>f{
-  padding-top: 10px;
-}
-.nav>.nav-links>a {
+
+.nav > .nav-links > a {
   display: inline-block;
   padding: 13px 10px 13px 10px;
   text-decoration: none;
-  color: white;
+ color: white;
+ height: 100%;
+
 }
 
-.nav>.nav-links>a:hover {
-  background-color: rgba(152, 152, 152, 0.3);
+.nav > .nav-links > a:hover {
+  background-color: #1A1A1D;
   transition: all 0.3s ease-in;
 }
 
-.nav>#nav-check {
+.nav > #nav-check {
   display: none;
 }
-
-
 .info {
   color: white;
   /* border: solid 1px white; */
