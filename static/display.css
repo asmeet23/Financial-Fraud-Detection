@@ -144,6 +144,12 @@ h1,tr{
     /* margin-top: 20px; */
     
 }
+.btttn input[type="submit"]:hover {
+    background-color: #950740;
+    /* color: black; */
+    /* border: 1px solid #4CAF50; */
+    transition: all 0.5s ease;   
+}
 .btttn
 {
     margin-top: 20px;

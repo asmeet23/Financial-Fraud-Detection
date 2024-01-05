@@ -113,7 +113,8 @@ def submit():
          result="Fraud"
         else:
          result="Not Fraud"
-         
+        
+             
         # Bank_acc_no=random.randint(1000000000,9999999999)
          
         cursor.execute('INSERT INTO userdata (name,Bank_acc_no, Unn, cc_num, amount, zip, city_pop, trans_num,Lattitude,Longitude,unix_time,prediction,result) VALUES (?, ?, ?, ?, ?,?, ?,?, ?,?,?,?,?)', (name,Bank_acc_no, Unn, cc_num, amt, zip, city_pop, trans_num,latitude,longitude,unix_time,RP,result))
@@ -127,7 +128,7 @@ def display_data():
     with app.app_context():
         db = get_db()
         cursor = db.cursor()
-        cursor.execute('SELECT name, Bank_acc_no,Unn,cc_num,amount,trans_num,Lattitude,Longitude,result FROM userdata')
+        cursor.execute('SELECT name, Bank_acc_no,cc_num,amount,trans_num,result FROM userdata')
         data = cursor.fetchall()
     
     return render_template('display.html', data=data)
