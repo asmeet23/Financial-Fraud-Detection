@@ -55,14 +55,14 @@
         <tr>
             <th>Name</th>
             <th>Bank_acc_no </th>
-            <th>Unn</th>
+            <!-- <th>Unn</th> -->
             <th>Credit Card Number</th>
             <th>Amount</th>
             <!-- <th>Zip</th> -->
             <!-- <th>City Population</th> -->
             <th>Transaction Number</th>
-            <th>Lattitude</th>
-            <th>Longitude</th>
+            <!-- <th>Lattitude</th>
+            <th>Longitude</th> -->
             <!-- <th>Unix_time</th> -->
             <!-- <th>prediction</th> -->
             <th>Result</th>
@@ -70,8 +70,8 @@
 
         </tr>
         {% for row in data %}
-        <tr class="{% if row[8] == 'Fraud' %}fraud
-        {% elif row[8]=='Not Fraud' %}Not-fraud
+        <tr class="{% if row[5] == 'Fraud' %}fraud
+        {% elif row[5]=='Not Fraud' %}Not-fraud
         {% else %}invalid
         {% endif %}">
             <td>{{ row[0] }}</td>
@@ -80,14 +80,14 @@
             <td>{{ row[3] }}</td>
             <td>{{ row[4] }}</td>
             <td>{{ row[5] }}</td>
-            <td>{{ row[6] }}</td>
-            <td>{{row [7] }}</td>
+            <!-- <td>{{ row[6] }}</td> -->
+            <!-- <td>{{row [7] }}</td> -->
             <!-- <td>{{row [8] }}</td>
             <td>{{row [9] }}</td> -->
             
             <!-- <td>{{row[10] }}</td>
             <td>{{row [11] }}</td> -->
-            <td>{{row [8] }}</td>
+            <!-- <td>{{row [8] }}</td> -->
             <!-- <td><button class="expand-btn" onclick="redirectToDetails('{{ row[0] }}')">Expand</button></td> -->
             <td><button class="expand-btn" onclick="redirectToDetails('{{ row[0] }}')">Expand</button></td>
 
