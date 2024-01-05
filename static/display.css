@@ -11,9 +11,13 @@ table {
     justify-content: center;
     align-items: center; */
 }
-h1{
-    color: white;
 
+.heading2{
+    color: white;
+    font-size: 100px;
+    text-align: center;
+    font-family: jomhuria;
+    margin-top: 80px;
 }
 /* .heading2{
  border: solid 5px #c3073f;
