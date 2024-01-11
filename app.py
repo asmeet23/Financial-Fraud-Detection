@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify,request, g
 import sqlite3
 from sklearn.preprocessing import StandardScaler
 import pickle
+import folium
 import numpy as np
 from flask import render_template
 import pandas as pd
@@ -152,6 +153,8 @@ def details_template(name):
         details = cursor.fetchone()
 
     return render_template('details.html', details=details)
+
+
    
 if __name__ == '__main__':
     app.run(debug=True)

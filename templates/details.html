@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/static/details.css">
     <link rel="stylesheet" href="/static/About.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 </head>
 
@@ -122,14 +124,7 @@
 
     </div>
 
-    <div class="maps-div">HERE GOES THE MAP Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut, sequi dicta vitae totam ratione quibusdam, quo consequuntur incidunt soluta fuga reiciendis. Enim ipsum explicabo delectus ratione sequi atque veniam aliquam!
-    Fugit totam dicta architecto animi est labore nulla incidunt, ipsam exercitationem officiis assumenda nesciunt odit libero? Pariatur doloribus qui sint voluptas dolores harum earum velit dolorem distinctio debitis, aut nihil.
-    Id facere voluptas enim sapiente fuga quibusdam autem voluptatum cum rem blanditiis. Asperiores, quos. Laudantium, itaque reiciendis. Tempore nisi, impedit, minima non voluptatibus dolorem a, beatae dolore quisquam ea alias.
-    Beatae dolorum animi eveniet voluptate quae quis quo adipisci hic sunt fugit. Repellat iure modi vel, fugiat dolore exercitationem ipsum aut, culpa rerum consequuntur libero rem perspiciatis voluptas quasi maiores.
-    Itaque, temporibus non deleniti excepturi nostrum iure ad expedita sit ipsa fugiat soluta tempore vero aut repudiandae unde veniam minus modi quis dolore in delectus saepe nam! Quaerat, dolorem velit.
-    Saepe libero esse animi aliquam repellat. Modi quae amet recusandae repellat officiis harum. Neque quae repellat repellendus mollitia quod alias magnam iusto cupiditate iste reprehenderit commodi, atque laudantium, amet itaque?
-    Accusamus repellendus error esse, nulla facere omnis provident inventore officiis eveniet dolores adipisci natus quae commodi similique labore numquam? Minima odit dolorem aspernatur rem corporis non ab sequi eligendi assumenda.
-    Ipsum quidem modi aperiam dolor, minima velit voluptate impedit iste, excepturi accusamus sit amet veritatis ea. Enim, ratione qui atque mollitia, inventore corrupti vel ab, sit optio ipsam molestias consequuntur.</div>
+    <div id="map" class="maps-div" style="height: 400px;"></div>
 
     <!-- <a href="{{ url_for('display_data') }}">Back to Data Display</a> -->
     <div style="display: flex; align-items: center; flex-direction: column;"><button class="det-button" onclick="location.href='{{ url_for('display_data') }}'">Back to Data Display</button></div>
@@ -180,6 +175,21 @@
         </div>
     
       </footer>
+      
+      <script>
+        var latitude = {{ details[8] }};
+        var longitude = {{ details[9] }};
+
+        var map = L.map('map').setView([latitude, longitude], 15);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        L.marker([latitude, longitude]).addTo(map)
+            .bindPopup('Transaction Location')
+            .openPopup();
+    </script>
 </body>
 
 </html>
