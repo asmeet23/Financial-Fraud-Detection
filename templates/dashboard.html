@@ -57,15 +57,9 @@
 
         <div class="heroTitle2">Securing Rajasthan Together</div>
 
-        <div class="heroPara">Our mission is to provide a secure and reliable platform for the people of Rajasthan to
-          make transactions and keep their money safe
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam consequatur doloribus dolorem animi eaque
-          maiores nesciunt, ducimus, amet nulla nostrum excepturi itaque dolor assumenda neque possimus laborum porro
-          quia adipisci accusamus beatae! Veritatis ut incidunt illum consequatur dolor nulla perferendis quae, placeat
-          explicabo porro voluptas praesentium! Praesentium deleniti soluta velit!
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque atque maiores repudiandae libero ex
-          beatae excepturi dolorem ad, adipisci voluptatibus..</div>
-        <button class="animated-border-button">Read more</button>
+        <div class="heroPara">Our mission is to establish a robust and trustworthy platform that empowers the people of Rajasthan to conduct secure transactions and safeguard their financial assets. We are dedicated to creating an environment where residents can confidently manage their money, free from concerns about the integrity of their transactions. By prioritizing security and reliability, we aim to be the go-to choice for individuals seeking a dependable financial platform in Rajasthan.
+          In pursuit of this mission, we prioritize the implementation of cutting-edge security measures to protect our users' financial data and transactions. We understand the significance of earning the trust of our community, and our commitment is reflected in the continuous improvement of our platform's security features. With a focus on transparency and customer satisfaction, we strive to provide a seamless and worry-free financial experience for the people of Rajasthan, ensuring that their money is not only safe but also easily accessible for their diverse needs.</div>
+        <button class="animated-border-button" onclick="scrollToSection()">Read more</button>
       </div>
       <div class="picture">
         <img src="/static/images/7176685.jpg" alt="" height="300px">
@@ -74,36 +68,28 @@
     </div>
   </div>
   <!-- card section  -->
+  <div id="section-to-scroll-to"></div>
   <div class="cardSection"> Dive into Expert Articles on Fraud Detection</div>
   <div class="container-card">
     <div class="card">
       <div class="card-info">
         <p class="title">Article 1</p>
-        <p class="para-card">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias obcaecati est eligendi
-          aliquam, quasi reprehenderit autem quas impedit hic ab reiciendis incidunt inventore voluptas nisi quod
-          voluptates unde! Dolorum, quaerat!
-          Repudiandae </p>
-        <a href="#" class="read-more-button">Read More</a>
+        <p class="para-card" style="text-align:justify">How AI And Machine Learning Help Detect And Prevent Fraud </p>
+        <a href="https://www.forbes.com/sites/forbestechcouncil/2023/11/01/how-ai-and-machine-learning-help-detect-and-prevent-fraud/?sh=6ba585de76d2" class="read-more-button">Read More</a>
       </div>
     </div>
     <div class="card">
       <div class="card-info">
-        <p class="title">Article 1</p>
-        <p class="para-card">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias obcaecati est eligendi
-          aliquam, quasi reprehenderit autem quas impedit hic ab reiciendis incidunt inventore voluptas nisi quod
-          voluptates unde! Dolorum, quaerat!
-          Repudiandae </p>
-        <a href="#" class="read-more-button">Read More</a>
+        <p class="title">Article 2</p>
+        <p class="para-card "  style="text-align:justify">The Government of India uses AI & ML to detect potential frauds under AB-PMJAY </p>
+        <a href="https://indiaai.gov.in/news/the-government-of-india-uses-ai-ml-to-detect-potential-frauds-under-ab-pmjay" class="read-more-button">Read More</a>
       </div>
     </div>
     <div class="card">
       <div class="card-info">
-        <p class="title">Article 1</p>
-        <p class="para-card">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias obcaecati est eligendi
-          aliquam, quasi reprehenderit autem quas impedit hic ab reiciendis incidunt inventore voluptas nisi quod
-          voluptates unde! Dolorum, quaerat!
-          Repudiandae </p>
-        <a href="#" class="read-more-button">Read More</a>
+        <p class="title">Article 3</p>
+        <p class="para-card"  style="text-align:justify">How to detect online fraud transactions and protect your business </p>
+        <a href="https://www.techtarget.com/whatis/feature/How-do-cybercriminals-steal-credit-card-information " class="read-more-button">Read More</a>
       </div>
     </div>
 
@@ -231,6 +217,8 @@
   </footer>
 
   <script>
+
+   
     var autoplayIntervalInSeconds = 3;
 
 
@@ -393,6 +381,7 @@
         };
       }
 
+      
       setActiveDotByScroll() {
         this.dots = this.container.querySelectorAll('.dots span');
         this.slider.addEventListener('scroll', () => {
@@ -480,7 +469,13 @@
     window.addEventListener('load', function () {
       var container = document.querySelector('.PostSlide .innerContainer');
       new PostSlider(container, 3);
+
+
+      
     })
+    function scrollToSection() {
+      document.getElementById('section-to-scroll-to').scrollIntoView({behavior: 'smooth'});
+  }
   </script>
 </body>
 
