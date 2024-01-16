@@ -361,6 +361,10 @@ section {
 	float: left;
 }
 
+p .innerpara
+{
+  text-align: center;
+}
 /* The company logo */
 
 .footer-distributed h3{

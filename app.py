@@ -117,9 +117,11 @@ def submit():
         
              
         # Bank_acc_no=random.randint(1000000000,9999999999)
-         
-        cursor.execute('INSERT INTO userdata (name,Bank_acc_no, Unn, cc_num, amount, zip, city_pop, trans_num,Lattitude,Longitude,unix_time,prediction,result) VALUES (?, ?, ?, ?, ?,?, ?,?, ?,?,?,?,?)', (name,Bank_acc_no, Unn, cc_num, amt, zip, city_pop, trans_num,latitude,longitude,unix_time,RP,result))
-        db.commit()
+        if(name!=0 and Unn!=0):
+         cursor.execute('INSERT INTO userdata (name,Bank_acc_no, Unn, cc_num, amount, zip, city_pop, trans_num,Lattitude,Longitude,unix_time,prediction,result) VALUES (?, ?, ?, ?, ?,?, ?,?, ?,?,?,?,?)', (name,Bank_acc_no, Unn, cc_num, amt, zip, city_pop, trans_num,latitude,longitude,unix_time,RP,result))
+         db.commit() 
+        # else:
+          
         return render_template('index.html', prediction=prediction[0][0],result=result, css=url_for('static', filename='index.css'))
  
 
