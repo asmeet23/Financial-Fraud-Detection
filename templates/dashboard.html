@@ -201,19 +201,13 @@
     </div>
 
     <div class="footer-right">
-
       <p>Contact Us</p>
-
-      <form action="#" method="post">
-
-        <input type="text" name="email" placeholder="Email">
-        <textarea name="message" placeholder="Message"></textarea>
-        <button>Send</button>
-
+      <form id="contactForm" action="#" method="post">
+          <input type="text" name="email" id="email" placeholder="Email">
+          <textarea name="message" id="message" placeholder="Message"></textarea>
+          <button type="button" onclick="saveInformation()">Send</button>
       </form>
-
-    </div>
-
+  </div>
   </footer>
 
   <script>
@@ -477,6 +471,32 @@
       document.getElementById('section-to-scroll-to').scrollIntoView({behavior: 'smooth'});
   }
   </script>
+  <script>
+    function saveInformation() {
+        // Get values from the form
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+
+        // Validate the form data (add more validation as needed)
+        if (email.trim() === '' || message.trim() === '') {
+            alert('Please fill in all fields');
+            return;
+        }
+
+        // Create an object to store the form data
+        var formData = {
+            email: email,
+            message: message
+        };
+
+        // You can now send the formData object to your server or save it in any way you prefer
+        console.log(formData);
+        // Alternatively, you can use AJAX to send the data to a server asynchronously
+
+        // For demonstration purposes, let's just display an alert
+        alert('Information saved:\nEmail: ' + email + '\nMessage: ' + message);
+    }
+</script>
 </body>
 
 </html>
