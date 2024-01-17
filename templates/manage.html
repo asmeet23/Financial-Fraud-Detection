@@ -88,7 +88,7 @@
   
             
     
-            <td><button class="expand-btn" onclick="redirectToDetails('{{ transaction[0] }}')">Block</button></td>
+            <td><button class="expand-btn" onclick=showalert()>Block</button></td>
 
 
         </tr>
@@ -169,6 +169,10 @@
 
         // For demonstration purposes, let's just display an alert
         alert('Information saved:\nEmail: ' + email + '\nMessage: ' + message);
+    }
+
+    function showalert() {
+      alert("The request to invertigate the transaction has been sent to the XYZ/ABC bank.");
     }
 </script>
 </body>
