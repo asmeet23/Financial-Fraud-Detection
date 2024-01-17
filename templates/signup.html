@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup Page</title>
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+  <link rel="stylesheet" type="text/css" href="/static/signup.css">
+</head>
+
+<body>
+  <div class="signup-head">Vanguard</div>
+  <div class="signup-container">
+    <h2>Welcome!</h2>
+    <h3>Please signup to continue</h3>
+    <form id="form" class="form1" action="/route_to_dashboard">
+      <span>
+        <div><input class="text-input text-input--material" id="name" placeholder="Name" type="text" required></div>
+        <br />
+        <div><input class="text-input text-input--material" id="email" placeholder="Email" type="email" required></div>
+        <br />
+        <div><input class="text-input text-input--material" id="password" placeholder="Create Password" type="password" required></div>
+      </span>
+      <br>
+      <input type="submit" value="Signup">
+    </form>
+  </div>
+</body>
+</html>

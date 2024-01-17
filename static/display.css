@@ -11,6 +11,10 @@ table {
     justify-content: center;
     align-items: center; */
 }
+.nav-hover:hover{
+    color: black !important;
+    transition: all 0.3s ease-in;
+  }
 
 .heading2{
     color: white;

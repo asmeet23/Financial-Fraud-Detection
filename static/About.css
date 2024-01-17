@@ -15,7 +15,10 @@
   }
   
   
-
+  .nav-hover:hover{
+    color: black !important;
+    transition: all 0.3s ease-in;
+  }
   
   body {
 background-color: #1A1A1D;
@@ -91,8 +94,9 @@ margin-top: 10px;
   }
   
   .nav > .nav-links > a:hover {
-    background-color: #1A1A1D;
-    transition: all 0.3s ease-in;
+   /* background-color: #1A1A1D; */
+  color: black;
+  transition: all 0.3s ease-in;
   }
   
   .nav > #nav-check {

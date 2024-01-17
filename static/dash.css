@@ -69,9 +69,14 @@ margin-top: 10px;
  height: 100%;
 
 }
+.nav-hover:hover{
+  color: black !important;
+  transition: all 0.3s ease-in;
+}
 
 .nav > .nav-links > a:hover {
-  background-color: #1A1A1D;
+  /* background-color: #1A1A1D; */
+  color: black;
   transition: all 0.3s ease-in;
 }
 
@@ -226,7 +231,8 @@ margin-top: 10px;
 
   .nav>.nav-btn>label:hover,
   .nav #nav-check:checked~.nav-btn>label {
-    background-color: rgba(0, 0, 0, 0.3);
+    /* background-color: rgba(0, 0, 0, 0.3); */
+
   }
 
   .nav>.nav-btn>label>span {

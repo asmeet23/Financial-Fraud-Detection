@@ -17,7 +17,10 @@
     /* font-family:Georgia, 'Times New Roman', Times, serif */
   
   }
-  
+  .nav-hover:hover{
+    color: black !important;
+    transition: all 0.3s ease-in;
+  }
   body {
     /* background-image: url(/dark-black-polygonal-illustration-which-consist-triangles-geometric-background-origami-style-with-grad.jpg); */
     margin: 0px;
@@ -82,8 +85,9 @@
   }
   
   .nav>.nav-links>a:hover {
-    background-color: #1a1a1d;
-    transition: all 0.3s ease-in;
+    /* background-color: #1A1A1D; */
+  color: black;
+  transition: all 0.3s ease-in;
   }
   
   .nav>#nav-check {

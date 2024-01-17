@@ -32,23 +32,26 @@
 
       <div class="nav-links">
         <a href="" target="_blank">Home</a>
-        
+
         <a href="">
-            <form action="{{ url_for('submit') }}" method="post" style="display: inline;">
-                <input type="submit" value="Check for Fraud" style="background: none; border: none; color: white; text-decoration: none; cursor: pointer; font-family: jose;
+          <form action="{{ url_for('submit') }}" method="post" style="display: inline;">
+            <input type="submit" value="Check for Fraud" class="nav-hover" style="background: none; 
+             border: none; color: white; text-decoration: none; cursor: pointer; font-family: jose;
     font-size: 20px;">
-            </form>
+          </form>
         </a>
-        <a href="" target="_blank"> <form action="/data" method="GET" style="display: inline;">
-          <input type="submit" value="History" style="background: none; border: none; color: white; text-decoration: none; cursor: pointer; font-family: jose;
+        <a href="" target="_blank">
+          <form action="/data" method="GET" style="display: inline;">
+            <input type="submit" value="History" class="nav-hover" style="background: none; border: none; color: white; text-decoration: none; cursor: pointer; font-family: jose;
           font-size: 20px;">
-      </form></a>
-       
-      <a href="" target="_blank">Manage</a>
+          </form>
+        </a>
+
+        <a href="" target="_blank">Manage</a>
 
         <a href="{{ url_for('about') }}" target="_blank">About us</a>
 
-    </div>
+      </div>
     </div>
     <!-- hero-section  -->
     <div class="centre-items">
@@ -57,8 +60,17 @@
 
         <div class="heroTitle2">Securing Rajasthan Together</div>
 
-        <div class="heroPara">Our mission is to establish a robust and trustworthy platform that empowers the people of Rajasthan to conduct secure transactions and safeguard their financial assets. We are dedicated to creating an environment where residents can confidently manage their money, free from concerns about the integrity of their transactions. By prioritizing security and reliability, we aim to be the go-to choice for individuals seeking a dependable financial platform in Rajasthan.
-          In pursuit of this mission, we prioritize the implementation of cutting-edge security measures to protect our users' financial data and transactions. We understand the significance of earning the trust of our community, and our commitment is reflected in the continuous improvement of our platform's security features. With a focus on transparency and customer satisfaction, we strive to provide a seamless and worry-free financial experience for the people of Rajasthan, ensuring that their money is not only safe but also easily accessible for their diverse needs.</div>
+        <div class="heroPara">Our mission is to establish a robust and trustworthy platform that empowers the people of
+          Rajasthan to conduct secure transactions and safeguard their financial assets. We are dedicated to creating an
+          environment where residents can confidently manage their money, free from concerns about the integrity of
+          their transactions. By prioritizing security and reliability, we aim to be the go-to choice for individuals
+          seeking a dependable financial platform in Rajasthan.
+          In pursuit of this mission, we prioritize the implementation of cutting-edge security measures to protect our
+          users' financial data and transactions. We understand the significance of earning the trust of our community,
+          and our commitment is reflected in the continuous improvement of our platform's security features. With a
+          focus on transparency and customer satisfaction, we strive to provide a seamless and worry-free financial
+          experience for the people of Rajasthan, ensuring that their money is not only safe but also easily accessible
+          for their diverse needs.</div>
         <button class="animated-border-button" onclick="scrollToSection()">Read more</button>
       </div>
       <div class="picture">
@@ -75,21 +87,26 @@
       <div class="card-info">
         <p class="title">Article 1</p>
         <p class="para-card" style="text-align:justify">How AI And Machine Learning Help Detect And Prevent Fraud </p>
-        <a href="https://www.forbes.com/sites/forbestechcouncil/2023/11/01/how-ai-and-machine-learning-help-detect-and-prevent-fraud/?sh=6ba585de76d2" class="read-more-button">Read More</a>
+        <a href="https://www.forbes.com/sites/forbestechcouncil/2023/11/01/how-ai-and-machine-learning-help-detect-and-prevent-fraud/?sh=6ba585de76d2"
+          class="read-more-button">Read More</a>
       </div>
     </div>
     <div class="card">
       <div class="card-info">
         <p class="title">Article 2</p>
-        <p class="para-card "  style="text-align:justify">The Government of India uses AI & ML to detect potential frauds under AB-PMJAY </p>
-        <a href="https://indiaai.gov.in/news/the-government-of-india-uses-ai-ml-to-detect-potential-frauds-under-ab-pmjay" class="read-more-button">Read More</a>
+        <p class="para-card " style="text-align:justify">The Government of India uses AI & ML to detect potential frauds
+          under AB-PMJAY </p>
+        <a href="https://indiaai.gov.in/news/the-government-of-india-uses-ai-ml-to-detect-potential-frauds-under-ab-pmjay"
+          class="read-more-button">Read More</a>
       </div>
     </div>
     <div class="card">
       <div class="card-info">
         <p class="title">Article 3</p>
-        <p class="para-card"  style="text-align:justify">How to detect online fraud transactions and protect your business </p>
-        <a href="https://www.techtarget.com/whatis/feature/How-do-cybercriminals-steal-credit-card-information " class="read-more-button">Read More</a>
+        <p class="para-card" style="text-align:justify">How to detect online fraud transactions and protect your
+          business </p>
+        <a href="https://www.techtarget.com/whatis/feature/How-do-cybercriminals-steal-credit-card-information "
+          class="read-more-button">Read More</a>
       </div>
     </div>
 
@@ -192,8 +209,10 @@
       <div class="footer-icons">
 
         <a href="https://www.facebook.com/PoliceRajasthan/?locale=hi_IN"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://www.linkedin.com/company/rajasthan-police/?originalSubdomain=in"><i class="fa-brands fa-linkedin"></i></a>
-        <a href="https://twitter.com/PoliceRajasthan?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/rajasthan-police/?originalSubdomain=in"><i
+            class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com/PoliceRajasthan?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i
+            class="fa-brands fa-x-twitter"></i></a>
         <a href="https://github.com/Basim03/RJPOLICE_HACK_1474_A-team_7"><i class="fa-brands fa-github"></i></a>
 
       </div>
@@ -203,16 +222,16 @@
     <div class="footer-right">
       <p>Contact Us</p>
       <form id="contactForm" action="#" method="post">
-          <input type="text" name="email" id="email" placeholder="Email">
-          <textarea name="message" id="message" placeholder="Message"></textarea>
-          <button type="button" onclick="saveInformation()">Send</button>
+        <input type="text" name="email" id="email" placeholder="Email">
+        <textarea name="message" id="message" placeholder="Message"></textarea>
+        <button type="button" onclick="saveInformation()">Send</button>
       </form>
-  </div>
+    </div>
   </footer>
 
   <script>
 
-   
+
     var autoplayIntervalInSeconds = 3;
 
 
@@ -375,7 +394,7 @@
         };
       }
 
-      
+
       setActiveDotByScroll() {
         this.dots = this.container.querySelectorAll('.dots span');
         this.slider.addEventListener('scroll', () => {
@@ -465,38 +484,38 @@
       new PostSlider(container, 3);
 
 
-      
+
     })
     function scrollToSection() {
-      document.getElementById('section-to-scroll-to').scrollIntoView({behavior: 'smooth'});
-  }
+      document.getElementById('section-to-scroll-to').scrollIntoView({ behavior: 'smooth' });
+    }
   </script>
   <script>
     function saveInformation() {
-        // Get values from the form
-        var email = document.getElementById('email').value;
-        var message = document.getElementById('message').value;
+      // Get values from the form
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
 
-        // Validate the form data (add more validation as needed)
-        if (email.trim() === '' || message.trim() === '') {
-            alert('Please fill in all fields');
-            return;
-        }
+      // Validate the form data (add more validation as needed)
+      if (email.trim() === '' || message.trim() === '') {
+        alert('Please fill in all fields');
+        return;
+      }
 
-        // Create an object to store the form data
-        var formData = {
-            email: email,
-            message: message
-        };
+      // Create an object to store the form data
+      var formData = {
+        email: email,
+        message: message
+      };
 
-        // You can now send the formData object to your server or save it in any way you prefer
-        console.log(formData);
-        // Alternatively, you can use AJAX to send the data to a server asynchronously
+      // You can now send the formData object to your server or save it in any way you prefer
+      console.log(formData);
+      // Alternatively, you can use AJAX to send the data to a server asynchronously
 
-        // For demonstration purposes, let's just display an alert
-        alert('Information saved:\nEmail: ' + email + '\nMessage: ' + message);
+      // For demonstration purposes, let's just display an alert
+      alert('Information saved:\nEmail: ' + email + '\nMessage: ' + message);
     }
-</script>
+  </script>
 </body>
 
 </html>

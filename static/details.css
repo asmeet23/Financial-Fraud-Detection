@@ -26,6 +26,10 @@
     width: 100%;
     margin: 20px auto; /* Adjust the margin as needed */
 }
+.nav-hover:hover{
+    color: black !important;
+    transition: all 0.3s ease-in;
+  }
 
 .left-column {
     flex: 1;
