@@ -74,28 +74,21 @@
             <th>Action</th>
 
         </tr>
-        {% for row in transactions  %}
-        <tr class="{% if row[5] == 'Fraud' %}fraud
-        {% elif row[5]=='Not Fraud' %}Not-fraud
+        {% for transaction in transactions  %}
+        <tr class="{% if transaction[5] == 'Fraud' %}fraud
+        {% elif transaction[5]=='Not Fraud' %}Not-fraud
         {% else %}invalid
         {% endif %}">
-            <td>{{ transactions[0] }}</td>
-            <td>{{ transactions[1] }}</td>
-            <td>{{ transactions[2] }}</td>
-            <td>{{ transactions[3] }}</td>
-            <td>{{ transactions[4] }}</td>
-            <td>{{ transactions[5] }}</td>
+            <td>{{ transaction[0] }}</td>
+            <td>{{ transaction[1] }}</td>
+            <td>{{ transaction[2] }}</td>
+            <td>{{ transaction[3] }}</td>
+            <td>{{ transaction[4] }}</td>
+            <td>{{ transaction[5] }}</td>
   
-            <!-- <td>{{ row[6] }}</td> -->
-            <!-- <td>{{row [7] }}</td> -->
-            <!-- <td>{{row [8] }}</td>
-            <td>{{row [9] }}</td> -->
             
-            <!-- <td>{{row[10] }}</td>
-            <td>{{row [11] }}</td> -->
-            <!-- <td>{{row [8] }}</td> -->
-            <!-- <td><button class="expand-btn" onclick="redirectToDetails('{{ row[0] }}')">Expand</button></td> -->
-            <td><button class="expand-btn" onclick="redirectToDetails('{{ row[0] }}')">Block</button></td>
+    
+            <td><button class="expand-btn" onclick="redirectToDetails('{{ transaction[0] }}')">Block</button></td>
 
 
         </tr>
