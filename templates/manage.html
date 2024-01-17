@@ -74,21 +74,18 @@
             <th>Action</th>
 
         </tr>
-        {% for row in data %}
+        {% for row in transactions  %}
         <tr class="{% if row[5] == 'Fraud' %}fraud
         {% elif row[5]=='Not Fraud' %}Not-fraud
         {% else %}invalid
-        {% endif %}"
-        
-        
-        
-        >
-            <td>{{ row[0] }}</td>
-            <td>{{ row[1] }}</td>
-            <td>{{ row[2] }}</td>
-            <td>{{ row[3] }}</td>
-            <td>{{ row[4] }}</td>
-            <td>{{ row[5] }}</td>
+        {% endif %}">
+            <td>{{ transactions[0] }}</td>
+            <td>{{ transactions[1] }}</td>
+            <td>{{ transactions[2] }}</td>
+            <td>{{ transactions[3] }}</td>
+            <td>{{ transactions[4] }}</td>
+            <td>{{ transactions[5] }}</td>
+  
             <!-- <td>{{ row[6] }}</td> -->
             <!-- <td>{{row [7] }}</td> -->
             <!-- <td>{{row [8] }}</td>
@@ -98,17 +95,13 @@
             <td>{{row [11] }}</td> -->
             <!-- <td>{{row [8] }}</td> -->
             <!-- <td><button class="expand-btn" onclick="redirectToDetails('{{ row[0] }}')">Expand</button></td> -->
-            <td><button class="expand-btn" onclick="redirectToDetails('{{ row[0] }}')">Expand</button></td>
+            <td><button class="expand-btn" onclick="redirectToDetails('{{ row[0] }}')">Block</button></td>
 
 
         </tr>
         {% endfor %}
     </table>
-    <div class="btttn">
-    <form action="/delete" method="POST" style="display: inline;">
-      <input type="submit" value="Clear database">
-  </form>
-</div>
+   
   </div>
     <!-- Update the script in the display.html file -->
     <script>

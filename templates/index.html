@@ -42,7 +42,12 @@
               font-size: 20px;">
           </form></a>
            
-          <a href="" target="_blank">Manage</a>
+          <a href="" target="_blank">
+            <form action="/manage" method="GET" style="display: inline;">
+              <input type="submit" value="Manage" class="nav-hover" style="background: none; border: none; color: white; text-decoration: none; cursor: pointer; font-family: jose;
+            font-size: 20px;">
+            </form>
+          </a>
 
             <a href="{{ url_for('about') }}" target="_blank">About us</a>
 
@@ -67,7 +72,7 @@
         <input type="text" id="trans_num" name="trans_num"><br>
         <label for="unix_time">Unix Time:</label><br>
         <input type="text" id="unix_time" name="unix_time"><br>
-        <input type="submit" value="Submit">
+        <input type="submit"  onclick=showalert() value="Submit">
     </form>
 <!-- footer  -->
 <footer class="footer-distributed">
@@ -134,6 +139,16 @@
 
         // For demonstration purposes, let's just display an alert
         alert('Information saved:\nEmail: ' + email + '\nMessage: ' + message);
+
+
+       
+    }
+
+
+
+    function showalert(event) {
+        event.preventDefault();
+        alert("Your data has been submitted successfully");
     }
 </script>
 </body>

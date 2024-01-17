@@ -154,11 +154,11 @@ def onlyFraud():
         cursor = db.cursor()
 
         # Modify this line to match your actual data structure
-        cursor.execute('SELECT * FROM userdata WHERE result = "Fraud"')
+        cursor.execute('SELECT name, Bank_acc_no,cc_num,amount,trans_num,result FROM userdata WHERE result = "Fraud"')
         fraud_transactions = cursor.fetchall()
 
         # Pass the fraudulent transactions to your template
-        return render_template('manage.html', fraud_transactions=fraud_transactions)
+        return render_template('manage.html', transactions=fraud_transactions)
     
     
     
