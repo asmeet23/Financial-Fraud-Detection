@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Display</title>
+    <link rel="stylesheet" href="/static/display.css">
+    <link rel="stylesheet" href="/static/About.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+</style>
+</head>
+<body>
+    <div class="nav">
+        <!-- <input type="checkbox" id="nav-check"> -->
+        <div class="nav-header">
+          <img src="/static/images/logo.svg" class="logo" alt="">
+          <div class="nav-title">
+            Vanguard
+          </div>
+        </div>
+        <div class="nav-btn">
+          <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+  
+        <div class="nav-links">
+          <a href="{{url_for('route_to_dashboard')}}" target="_blank">Home</a>
+          
+          <a href="">
+              <form action="{{ url_for('submit') }}" method="post" style="display: inline;">
+                  <input type="submit" value="Check for Fraud" class="nav-hover" style="background: none; border: none; color: white; text-decoration: none; cursor: pointer; font-family: jose;
+      font-size: 20px;">
+              </form>
+          </a>
+          <a href="" target="_blank">
+             <form action="/data" method="GET" style="display: inline;">
+            <input type="submit" value="History" class="nav-hover" style="background: none; border: none; color: white; text-decoration: none; cursor: pointer; font-family: jose;
+            font-size: 20px;">
+        </form></a>
+         
+        <a href="" target="_blank">Manage</a>
+
+          <a href="{{ url_for('about') }}" target="_blank">About us</a>
+        
+        </div>
+      </div>
+      <div class="tablee">
+       <div class="heading2">
+    Data from Database
+  </div>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Bank_acc_no </th>
+            <!-- <th>Unn</th> -->
+            <th>Credit Card Number</th>
+            <th>Amount</th>
+            <!-- <th>Zip</th> -->
+            <!-- <th>City Population</th> -->
+            <th>Transaction Number</th>
+            <!-- <th>Lattitude</th>
+            <th>Longitude</th> -->
+            <!-- <th>Unix_time</th> -->
+            <!-- <th>prediction</th> -->
+            <th>Result</th>
+            <th>Action</th>
+
+        </tr>
+        {% for row in data %}
+        <tr class="{% if row[5] == 'Fraud' %}fraud
+        {% elif row[5]=='Not Fraud' %}Not-fraud
+        {% else %}invalid
+        {% endif %}">
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <!-- <td>{{ row[6] }}</td> -->
+            <!-- <td>{{row [7] }}</td> -->
+            <!-- <td>{{row [8] }}</td>
+            <td>{{row [9] }}</td> -->
+            
+            <!-- <td>{{row[10] }}</td>
+            <td>{{row [11] }}</td> -->
+            <!-- <td>{{row [8] }}</td> -->
+            <!-- <td><button class="expand-btn" onclick="redirectToDetails('{{ row[0] }}')">Expand</button></td> -->
+            <td><button class="expand-btn" onclick="redirectToDetails('{{ row[0] }}')">Expand</button></td>
+
+
+        </tr>
+        {% endfor %}
+    </table>
+    <div class="btttn">
+    <form action="/delete" method="POST" style="display: inline;">
+      <input type="submit" value="Clear database">
+  </form>
+</div>
+  </div>
+    <!-- Update the script in the display.html file -->
+    <script>
+        // Function to redirect to the details template with the selected row's information
+        function redirectToDetails(name) {
+            // Redirect to the details page with the specific name parameter
+            window.location.href = '/details_template/' + name;
+        }
+    </script>
+    
+ <footer class="footer-distributed">
+    <hr>
+    <div class="footer-left">
+
+
+      <h3>Vanguard<span><img src="/logo.svg" alt=""></span></h3>
+
+      <p class="footer-links">
+        <a href="#">Home</a>
+        ·
+        <a href="#">Contact Us</a>
+        ·
+        <a href="#">Terms of Service</a>
+        ·
+        <a href="#">Privacy Policy</a>
+      </p>
+
+      <p class="footer-company-name">Vangaurd © 2023</p>
+
+      <div class="footer-icons">
+
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-github"></i></a>
+
+      </div>
+
+    </div>
+
+    <div class="footer-right">
+      <p>Contact Us</p>
+      <form id="contactForm" action="#" method="post">
+          <input type="text" name="email" id="email" placeholder="Email">
+          <textarea name="message" id="message" placeholder="Message"></textarea>
+          <button type="button" onclick="saveInformation()">Send</button>
+      </form>
+  </div>
+
+  </footer>
+  <script>
+    function saveInformation() {
+        // Get values from the form
+        var email = document.getElementById('email').value;
+        var message = document.getElementById('message').value;
+
+        // Validate the form data (add more validation as needed)
+        if (email.trim() === '' || message.trim() === '') {
+            alert('Please fill in all fields');
+            return;
+        }
+
+        // Create an object to store the form data
+        var formData = {
+            email: email,
+            message: message
+        };
+
+        // You can now send the formData object to your server or save it in any way you prefer
+        console.log(formData);
+        // Alternatively, you can use AJAX to send the data to a server asynchronously
+
+        // For demonstration purposes, let's just display an alert
+        alert('Information saved:\nEmail: ' + email + '\nMessage: ' + message);
+    }
+</script>
+</body>
+</html>
+
