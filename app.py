@@ -115,7 +115,6 @@ def submit():
         else:
          result="Not Fraud"
         
-             
         # Bank_acc_no=random.randint(1000000000,9999999999)
         if(name!=0 and Unn!=0):
          cursor.execute('INSERT INTO userdata (name,Bank_acc_no, Unn, cc_num, amount, zip, city_pop, trans_num,Lattitude,Longitude,unix_time,prediction,result) VALUES (?, ?, ?, ?, ?,?, ?,?, ?,?,?,?,?)', (name,Bank_acc_no, Unn, cc_num, amt, zip, city_pop, trans_num,latitude,longitude,unix_time,RP,result))
@@ -146,6 +145,25 @@ def delete_data():
     
     return render_template('display.html')
 
+
+
+@app.route('/manage')
+def onlyFraud():
+    with app.app_context():
+        db = get_db()
+        cursor = db.cursor()
+
+        # Modify this line to match your actual data structure
+        cursor.execute('SELECT * FROM userdata WHERE result = "Fraud"')
+        fraud_transactions = cursor.fetchall()
+
+        # Pass the fraudulent transactions to your template
+        return render_template('manage.html', fraud_transactions=fraud_transactions)
+    
+    
+    
+    
+    
 @app.route('/details_template/<name>')
 def details_template(name):
     with app.app_context():
