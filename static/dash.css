@@ -170,7 +170,7 @@ margin-top: 10px;
 
 .centre-items {
   position: absolute;
-  top: 50%;
+  top: 10%;
   left: 50%;
   -ms-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translate(-50%, -50%);

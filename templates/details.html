@@ -175,12 +175,20 @@
               <button type="button" onclick="saveInformation()">Send</button>
           </form>
       </div>
-    
+      <div id="google_element">
+        <script src="https://translate.google.com/translate_a/element.js?cb=translateElementInit"></script>
+
+    </div>
+    <script>
+        function translateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_element');
+        }
+    </script>
       </footer>
       
       <script>
-        var latitude = {{ details[8] }};
-        var longitude = {{ details[9] }};
+        var latitude = details[8] ;
+        var longitude = details[9];
 
         var map = L.map('map').setView([latitude, longitude], 15);
 
