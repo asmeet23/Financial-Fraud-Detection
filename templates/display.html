@@ -42,6 +42,12 @@
         </form></a>
          
         <a href="" target="_blank">
+          <form action="{{ url_for('transaction') }}" method="GET">
+            <input type="submit" value="Go to Live Transactions" class="nav-hover" style="background: none; border: none; color: white; text-decoration: none; cursor: pointer; font-family: jose;
+            font-size: 20px;">
+          </form>
+        </a>
+        <a href="" target="_blank">
           <form action="/manage" method="GET" style="display: inline;">
             <input type="submit" value="Manage" class="nav-hover" style="background: none; border: none; color: white; text-decoration: none; cursor: pointer; font-family: jose;
           font-size: 20px;">

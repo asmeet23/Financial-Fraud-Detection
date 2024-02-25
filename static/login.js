@@ -12,6 +12,7 @@ function auth(event) {
       'user3': 'user3',
       'user4': 'user4'
     };
+
   
     // Check if the entered username is valid
     if (allowedUsers.hasOwnProperty(usernameInput)) {

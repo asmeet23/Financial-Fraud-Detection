@@ -1,25 +1,69 @@
-from flask import Flask, request, jsonify,request, g
+# Flask imports
+from flask import Flask, request, jsonify, render_template, url_for, g
+
+# Standard library imports
 import sqlite3
-from sklearn.preprocessing import StandardScaler
-import pickle
-import folium
-import numpy as np
-from flask import render_template
-import pandas as pd
+import threading
+import time
+import json
 import random
-from flask import url_for
-from sklearn.preprocessing import LabelEncoder
-from keras.models import load_model
+
+# Third-party imports
+import numpy as np
+import pandas as pd
+import requests
 import folium
 import geocoder
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+from keras.models import load_model
+from flask_socketio import SocketIO, emit
+import pickle
+from threading import Thread
+
 
 app = Flask(__name__)
-
 encoder=LabelEncoder()
-
 scaler=pickle.load(open('min_max_scaler.pkl','rb'))
-# Load the pre-trained machine learning model
 model=load_model('my_model.h5')
+socketio = SocketIO(app, cors_allowed_origins="*")  # Allow CORS
+
+
+
+
+
+def generate_transaction():
+        df = pd.read_csv('fraudTrain_clean.csv')
+
+        for index, row in df.iterrows():
+            try:
+                transaction = {
+                    'cc_num': row['cc_num'],
+                    'amt': row['amt'],
+                    'zip': row['zip'],
+                    'lat': row['lat'],
+                    'long': row['long'],
+                    'trans_num':row['trans_num'],
+                    'is_fraud': row['is_fraud'],
+                    'trans_date':row['trans_date'],
+                    'trans_time':row['trans_time']
+                }
+                socketio.emit('transaction', json.dumps(transaction))
+                time.sleep(random.uniform(0,2))  # Vary the time between transactions
+            except Exception as e:
+                print(f"Error generating transaction: {e}")
+
+@app.route('/Live')
+def transaction():
+        # Start the background thread
+        thread = Thread(target=generate_transaction)
+        thread.start()
+
+        # Immediately render the template
+        return render_template('Live.html')
+
+
+
+
 
 
 #code for the sql insertion view and deletion of the data
@@ -177,4 +221,7 @@ def details_template(name):
 
    
 if __name__ == '__main__':
+    thread = threading.Thread(target=generate_transaction)
+    thread.start()
+    socketio.run(app, debug=True)  # Run the server in debug mode
     app.run(debug=True)
