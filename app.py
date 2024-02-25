@@ -204,9 +204,27 @@ def onlyFraud():
         # Pass the fraudulent transactions to your template
         return render_template('manage.html', transactions=fraud_transactions)
     
+@app.route('/map')
+def index():
+    # Get the latitude and longitude of the current user's location
+    g = geocoder.ip('me')
+    lat, lng = g.latlng
+
+    # Create a map centered at the user's location
+    m = folium.Map(location=[lat, lng])
+
+    # Add a marker at the user's location
+    folium.Marker([lat, lng], popup='Your Location').add_to(m)
+
+    # Save it to a file
+    m.save('static/map.html')
+
+    # Render it
+    return render_template('map.html')
+
     
-    
-    
+
+
     
 @app.route('/details_template/<name>')
 def details_template(name):
@@ -217,8 +235,6 @@ def details_template(name):
         details = cursor.fetchone()
 
     return render_template('details.html', details=details)
-
-
    
 if __name__ == '__main__':
     thread = threading.Thread(target=generate_transaction)

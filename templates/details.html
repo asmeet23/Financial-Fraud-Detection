@@ -131,9 +131,12 @@
 
     </div>
 
-    <div id="map" class="maps-div" style="height: 400px;"></div>
+    <div id="map" class="maps-div" style="height: 400px;">
 
-    <!-- <a href="{{ url_for('display_data') }}">Back to Data Display</a> -->
+        <iframe src="{{ url_for('static', filename='map.html') }}"  class="maps-div" ></iframe>
+
+    </div>
+
     <div style="display: flex; align-items: center; flex-direction: column;"><button class="det-button" onclick="location.href='{{ url_for('display_data') }}'">Back to Data Display</button></div>
     
 
