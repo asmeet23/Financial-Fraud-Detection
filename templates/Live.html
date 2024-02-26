@@ -26,32 +26,48 @@
             padding: 5px;
             text-align: left;
         }
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #transaction-container {
+            height: 80%;
+            overflow: auto;
+        }
+    
+     
 
     </style>
 </head>
 <body>
     <h1>Live Transactions</h1>
-    <div style="height: 50vh; overflow: auto;">
+    <div id="transaction-container">
 
     <table id="transaction-table">
-        <tr>
-            <th>CC Number</th>
-            <th>Amount</th>
-            <th>Zip</th>
-            <th>Latitude</th>
-            <th>Longitude</th>
-            <th>Transaction Number</th>
-            <th>Is Fraud</th>
-            <th>Transaction Date</th>
-            <th>Transaction Time</th>
-        </tr>
+        <thead>
+            <tr>
+                <th>CC Number</th>
+                <th>Amount</th>
+                <th>Zip</th>
+                <th>Latitude</th>
+                <th>Longitude</th>
+                <th>Transaction Number</th>
+                <th>Is Fraud</th>
+            </tr>
     </table>
 </div>
 
     <script>
         var socket = io.connect('http://' + document.domain + ':' + location.port);
+        var container = document.getElementById('transaction-container');
 
         socket.on('transaction', function (data) {
+            // Check if the user is at the bottom before adding the transaction
+            var isAtBottom = container.scrollTop + container.clientHeight >= container.scrollHeight;
+
             var transaction = JSON.parse(data);
             var table = document.getElementById('transaction-table');
 
@@ -64,8 +80,7 @@
             var longCell = row.insertCell(4);
             var transNumCell = row.insertCell(5);
             var isFraudCell = row.insertCell(6);
-            var transDateCell = row.insertCell(7);
-            var transTimeCell = row.insertCell(8);
+            
 
             // Set the cell values
             ccNumCell.textContent = transaction.cc_num;
@@ -75,11 +90,12 @@
             longCell.textContent = transaction.long;
             transNumCell.textContent = transaction.trans_num;
             isFraudCell.textContent = transaction.is_fraud;
-            transDateCell.textContent = transaction.trans_date;
-            transTimeCell.textContent = transaction.trans_time;
-
-            while (table.rows.length > maxTransactions + 1) {  // +1 for the header row
-                table.deleteRow(1);  // delete the oldest transaction row, which is after the header row
+            
+            // If the user was at the bottom, scroll to the bottom
+            if (isAtBottom) {
+                setTimeout(function() {
+                    container.scrollTop = container.scrollHeight;
+                }, 10);
             }
         });
     </script>

@@ -22,6 +22,7 @@ from threading import Thread
 
 
 app = Flask(__name__)
+
 encoder=LabelEncoder()
 scaler=pickle.load(open('min_max_scaler.pkl','rb'))
 model=load_model('my_model.h5')
@@ -48,7 +49,7 @@ def generate_transaction():
                     'trans_time':row['trans_time']
                 }
                 socketio.emit('transaction', json.dumps(transaction))
-                time.sleep(random.uniform(0,2))  # Vary the time between transactions
+                time.sleep(random.uniform(0,10))  # Vary the time between transactions
             except Exception as e:
                 print(f"Error generating transaction: {e}")
 
