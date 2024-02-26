@@ -46,12 +46,12 @@
           font-size: 20px;">
           </form>
         </a>
-        <a href="" target="_blank">
+        <!-- <a href="" target="_blank">
         <form action="{{ url_for('transaction') }}" method="GET">
           <input type="submit" value="Go to Live Transactions" class="nav-hover" style="background: none; border: none; color: white; text-decoration: none; cursor: pointer; font-family: jose;
           font-size: 20px;">
         </form>
-      </a>
+      </a> -->
         <a href="" target="_blank">
           <form action="/manage" method="GET" style="display: inline;">
             <input type="submit" value="Manage" class="nav-hover" style="background: none; border: none; color: white; text-decoration: none; cursor: pointer; font-family: jose;
@@ -68,11 +68,17 @@
     <!-- hero-section  -->
     <div class="centre-items">
       <div class="info">
-        <div class="heroTitle">Vangaurd</div>
+        <div class="heroPara">
+          <iframe src="{{ url_for('transaction') }}" width="100%" height="500px">
+            <!-- Alternative content for browsers that do not support iframes -->
+           
+          </iframe>
+</iframe>
+            <!-- Alternative content for browsers that do not support iframes -->
+        
+          </iframe>
 
-        <div class="heroTitle2">Securing India Together</div>
-
-        <div class="heroPara">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium fugit quo, labore repellat cupiditate blanditiis enim adipisci natus iusto ex! Excepturi animi quas cupiditate reiciendis inventore aut atque eveniet numquam. Tempora minus molestiae doloremque consequatur quos hic totam voluptatum veniam ratione officiis voluptas nulla, assumenda consectetur. Placeat unde esse dignissimos excepturi consectetur quia reprehenderit aliquam fugiat, at, officiis culpa sit corporis iure possimus aliquid architecto nihil. Iure sint maiores nemo itaque. Placeat, cumque earum. Amet est nesciunt odit at omnis esse? Atque cum sint nisi? Quo recusandae expedita aut commodi, beatae illo numquam magnam ipsum provident voluptatum ut veniam eaque!</div>
+        </div>
         <button class="animated-border-button" onclick="scrollToSection()">Read more</button>
       </div>
       <div class="picture">

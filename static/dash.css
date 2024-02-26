@@ -170,7 +170,7 @@ margin-top: 10px;
 
 .centre-items {
   position: absolute;
-  top: 10%;
+  top: 15%;
   left: 50%;
   -ms-transform: translateX(-50%) translateY(-50%);
   -webkit-transform: translate(-50%, -50%);
@@ -197,7 +197,9 @@ margin-top: 10px;
   /* background-repeat: no-repeat;
     background-size:100%; */
 }
-
+iframe {
+  overflow: hidden;
+}
 @font-face {
   font-family: jomhuria;
   src: url(/static/Jomhuria-Regular.ttf);
