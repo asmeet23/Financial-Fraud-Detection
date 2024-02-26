@@ -3,47 +3,13 @@
 <head>
     <title>Live Transactions</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
-    <style>
-        li {
-            margin-bottom: 10px;
-            list-style-type: none;
-            width: 100%;
-            border: solid 1px black;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        table tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        table tr:nth-child(odd) {
-            background-color: #ffffff;
-        }
-        th, td {
-            border: 1px solid black;
-            padding: 5px;
-            text-align: left;
-        }
-        body, html {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        #transaction-container {
-            height: 80%;
-            overflow: auto;
-        }
-    
-     
-
-    </style>
+    <link rel="stylesheet" href="/static/live.css">
 </head>
 <body>
-    <h1>Live Transactions</h1>
+    <!-- <h1>Live Transactions</h1> -->
+    <div class="heading2">
+        Live Transactions
+      </div>
     <div id="transaction-container">
 
     <table id="transaction-table">

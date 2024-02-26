@@ -17,7 +17,7 @@
     <div class="nav">
       <!-- <input type="checkbox" id="nav-check"> -->
       <div class="nav-header">
-        <img src="/static/images/logo.svg" class="logo" alt="">
+        <img src="/static/images/logo.svg" class="logo" >
         <div class="nav-title">
           Vanguard
         </div>
@@ -82,7 +82,7 @@
         <button class="animated-border-button" onclick="scrollToSection()">Read more</button>
       </div>
       <div class="picture">
-        <img src="/static/images/Rajasthan_Police_Logo.webp" alt="" height="300px">
+        <img src="/static/images/logo.svg" alt="" height="300px">
       </div>
 
     </div>
@@ -123,8 +123,8 @@
 
 
   <!-- carousel  -->
-  <div class="cardSection">In Collaboration With Rajasthan Police</div>
-  <div class="PostSlide">
+  <!-- <div class="cardSection">In Collaboration With Rajasthan Police</div> -->
+  <!-- <div class="PostSlide">
 
     <div class="innerContainer active">
       <div class="slider">
@@ -174,8 +174,8 @@
       <div class="dots">
       </div>
     </div>
-  </div>
-  <div class="carouselPara">In proud collaboration with the esteemed Rajasthan Police, we stand united in our commitment
+  </div> -->
+  <!-- <div class="carouselPara">In proud collaboration with the esteemed Rajasthan Police, we stand united in our commitment
     to security, order, and peace. Established in January 1951, the Rajasthan Police has evolved into a formidable
     95,000-strong force, embodying excellence in organization, equipment, operational techniques, and a steadfast
     outlook. Together, we share a narrative of achievements and glory spanning seventy-three years. From combating the
@@ -192,7 +192,7 @@
     Laboratory, advanced Telecommunication facilities, and cutting-edge Information Technology. While the tools may have
     evolved, the enduring 'esprit de corps' — a shared camaraderie that defines us as a family — remains unaltered. In
     the true spirit of the Rajasthan Police motto, 'Sevarth Katibaddhta' सेवार्थ कटिबद्धता, we collaborate to ensure a
-    safer and more secure future for all.</div>
+    safer and more secure future for all.</div> -->
 
 
 
@@ -201,56 +201,47 @@
   <footer class="footer-distributed">
     <hr>
     <div class="footer-left">
-
-
-      <h3>Vangaurd<span><img src="/logo.svg" alt=""></span></h3>
-
-      <p class="footer-links">
-        <a href="#">Home</a>
-        ·
-        <a href="#">Contact Us</a>
-        ·
-        <a href="#">Terms of Service</a>
-        ·
-        <a href="#">Privacy Policy</a>
-      </p>
-
-      <p class="footer-company-name">Vangaurd © 2023</p>
-
-      <div class="footer-icons">
-
-        <a href="https://www.facebook.com/PoliceRajasthan/?locale=hi_IN"><i class="fa-brands fa-facebook"></i></a>
-        <a href="https://www.linkedin.com/company/rajasthan-police/?originalSubdomain=in"><i
-            class="fa-brands fa-linkedin"></i></a>
-        <a href="https://twitter.com/PoliceRajasthan?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i
-            class="fa-brands fa-x-twitter"></i></a>
-        <a href="https://github.com/Basim03/RJPOLICE_HACK_1474_A-team_7"><i class="fa-brands fa-github"></i></a>
-
-      </div>
-
+        <h3>Vanguard<span><img src="/logo.svg" alt=""></span></h3>
+        <p class="footer-links">
+            <a href="#">Home</a>
+            ·
+            <a href="#">Contact Us</a>
+            ·
+            <a href="#">Terms of Service</a>
+            ·
+            <a href="#">Privacy Policy</a>
+        </p>
+        <p class="footer-company-name">Vanguard © 2023</p>
+        <div class="footer-icons">
+            <a href="https://www.facebook.com/PoliceRajasthan/?locale=hi_IN"><i class="fa-brands fa-facebook"></i></a>
+            <a href="https://www.linkedin.com/company/rajasthan-police/?originalSubdomain=in"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://twitter.com/PoliceRajasthan?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://github.com/Basim03/RJPOLICE_HACK_1474_A-team_7"><i class="fa-brands fa-github"></i></a>
+        </div>
     </div>
 
     <div class="footer-right">
-      <p>Contact Us</p>
-      <form id="contactForm" action="#" method="post">
-        <input type="text" name="email" id="email" placeholder="Email">
-        <textarea name="message" id="message" placeholder="Message"></textarea>
-        <button type="button" onclick="saveInformation()">Send</button>
-      </form>
+        <p>Contact Us</p>
+        <form id="contactForm" action="#" method="post">
+            <input type="text" name="email" id="email" placeholder="Email">
+            <textarea name="message" id="message" placeholder="Message"></textarea>
+            <button type="button" onclick="saveInformation()">Send</button>
+        </form>
+        <!-- Move google_element here -->
+        <div id="google_element">
+            <script src="https://translate.google.com/translate_a/element.js?cb=translateElementInit"></script>
+        </div>
+        <!-- Script for google translate -->
+        <script>
+            function translateElementInit() {
+                new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_element');
+            }
+        </script>
     </div>
+</footer>
 
-     <div id="google_element">
-        <script src="https://translate.google.com/translate_a/element.js?cb=translateElementInit"></script>
-
-    </div>
-    <script>
-        function translateElementInit() {
-            new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_element');
-        }
-    </script>
-  </footer>
-
-  <script>
+<!-- script for carousel -->
+  <!-- <script>
 
 
     var autoplayIntervalInSeconds = 3;
@@ -510,7 +501,14 @@
     function scrollToSection() {
       document.getElementById('section-to-scroll-to').scrollIntoView({ behavior: 'smooth' });
     }
+  </script> -->
+  <!-- scroll to section script for read more button  -->
+  <script>
+    function scrollToSection() {
+      document.getElementById('section-to-scroll-to').scrollIntoView({ behavior: 'smooth' });
+    }
   </script>
+  <!-- script for form validation -->
   <script>
     function saveInformation() {
       // Get values from the form

@@ -518,6 +518,45 @@ p .innerpara
   margin-top: 50px;
 
 }
+/* Styles for Google Translate Element */
+#google_element {
+  /* float: inline-end; */
+  margin-top: 20px; /* Adjust as needed */
+}
+
+/* Additional styling for Google Translate button */
+.goog-te-gadget {
+  font-size: 0; /* Hide the default text */
+}
+
+.goog-te-gadget img {
+  width: 22px; /* Adjust the size of the language icon */
+  height: 15px;
+  border: none;
+}
+
+.goog-te-gadget .goog-te-combo {
+  height: 30px; /* Adjust the height of the language dropdown */
+  border: 1px solid #33383b;
+  border-radius: 2px;
+  background-color: #1f2022;
+  color: #d1d2d2;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.goog-te-gadget .goog-te-button {
+  border: 1px solid #33383b;
+  background-color: #1f2022;
+  color: #d1d2d2;
+  border-radius: 2px;
+  padding: 0 8px;
+  margin-right: 5px;
+}
+
+.goog-te-gadget .goog-te-menu-value {
+  color: #d1d2d2;
+}
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 1000px) {

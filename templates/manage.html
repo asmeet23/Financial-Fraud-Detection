@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/static/display.css">
     <link rel="stylesheet" href="/static/About.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <style>
 
 </style>
@@ -113,53 +114,46 @@
         }
     </script>
     
- <footer class="footer-distributed">
-    <hr>
-    <div class="footer-left">
-
-
-      <h3>Vanguard<span><img src="/logo.svg" alt=""></span></h3>
-
-      <p class="footer-links">
-        <a href="#">Home</a>
-        ·
-        <a href="#">Contact Us</a>
-        ·
-        <a href="#">Terms of Service</a>
-        ·
-        <a href="#">Privacy Policy</a>
-      </p>
-
-      <p class="footer-company-name">Vangaurd © 2023</p>
-
-      <div class="footer-icons">
-
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-linkedin"></i></a>
-        <a href="#"><i class="fa fa-github"></i></a>
-
+    <footer class="footer-distributed">
+      <hr>
+      <div class="footer-left">
+          <h3>Vanguard<span><img src="/logo.svg" alt=""></span></h3>
+          <p class="footer-links">
+              <a href="#">Home</a>
+              ·
+              <a href="#">Contact Us</a>
+              ·
+              <a href="#">Terms of Service</a>
+              ·
+              <a href="#">Privacy Policy</a>
+          </p>
+          <p class="footer-company-name">Vanguard © 2023</p>
+          <div class="footer-icons">
+              <a href="https://www.facebook.com/PoliceRajasthan/?locale=hi_IN"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/company/rajasthan-police/?originalSubdomain=in"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://twitter.com/PoliceRajasthan?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa-brands fa-x-twitter"></i></a>
+              <a href="https://github.com/Basim03/RJPOLICE_HACK_1474_A-team_7"><i class="fa-brands fa-github"></i></a>
+          </div>
       </div>
-
-    </div>
-
-    <div class="footer-right">
-      <p>Contact Us</p>
-      <form id="contactForm" action="#" method="post">
-          <input type="text" name="email" id="email" placeholder="Email">
-          <textarea name="message" id="message" placeholder="Message"></textarea>
-          <button type="button" onclick="saveInformation()">Send</button>
-      </form>
-  </div>
-  <div id="google_element">
-    <script src="https://translate.google.com/translate_a/element.js?cb=translateElementInit"></script>
-
-</div>
-<script>
-    function translateElementInit() {
-        new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_element');
-    }
-</script>
+  
+      <div class="footer-right">
+          <p>Contact Us</p>
+          <form id="contactForm" action="#" method="post">
+              <input type="text" name="email" id="email" placeholder="Email">
+              <textarea name="message" id="message" placeholder="Message"></textarea>
+              <button type="button" onclick="saveInformation()">Send</button>
+          </form>
+          <!-- Move google_element here -->
+          <div id="google_element">
+              <script src="https://translate.google.com/translate_a/element.js?cb=translateElementInit"></script>
+          </div>
+          <!-- Script for google translate -->
+          <script>
+              function translateElementInit() {
+                  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_element');
+              }
+          </script>
+      </div>
   </footer>
   <script>
     function saveInformation() {
