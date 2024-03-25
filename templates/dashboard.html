@@ -69,14 +69,11 @@
     <div class="centre-items">
       <div class="info">
         <div class="heroPara">
-          <iframe src="{{ url_for('transaction') }}" width="100%" height="500px">
+          <iframe src="{{ url_for('transaction') }}"  class="transaction"  width="100%" height="500px">
             <!-- Alternative content for browsers that do not support iframes -->
            
           </iframe>
-</iframe>
-            <!-- Alternative content for browsers that do not support iframes -->
-        
-          </iframe>
+
 
         </div>
         <button class="animated-border-button" onclick="scrollToSection()">Read more</button>
@@ -87,6 +84,15 @@
 
     </div>
   </div>
+
+<div class="graph">
+
+<iframe src="/templates/DynamicGraph.html" class="graph2" frameborder="0"></iframe>
+
+
+</div>
+
+
   <!-- card section  -->
   <div id="section-to-scroll-to"></div>
   <div class="cardSection"> Dive into Expert Articles on Fraud Detection</div>

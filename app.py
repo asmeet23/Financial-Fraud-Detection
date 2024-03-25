@@ -7,7 +7,14 @@ import threading
 import time
 import json
 import random
-
+from flask import Flask, render_template_string
+from matplotlib.animation import FuncAnimation, ArtistAnimation
+from matplotlib.figure import Figure
+import matplotlib.pyplot as plt
+import numpy as np
+import io
+import base64
+import urllib
 # Third-party imports
 import numpy as np
 import pandas as pd
@@ -31,11 +38,15 @@ socketio = SocketIO(app, cors_allowed_origins="*")  # Allow CORS
 
 
 
+def graph():
+ return render_template('DynamicGraph.html', css=url_for('static', filename='graph.css'))
+
+
 
 def generate_transaction():
         df = pd.read_csv('fraudTrain_clean.csv')
-
-        for index, row in df.iterrows():
+        i=0
+        for i, row in df.iterrows():
             try:
                 transaction = {
                     'cc_num': row['cc_num'],
