@@ -38,8 +38,9 @@ socketio = SocketIO(app, cors_allowed_origins="*")  # Allow CORS
 
 
 
-def graph():
- return render_template('DynamicGraph.html', css=url_for('static', filename='graph.css'))
+@app.route('/graph')
+def graph1():
+    return render_template('DynamicGraph.html', css=url_for('static', filename='Dynamicgraph.css'))
 
 
 
@@ -60,7 +61,7 @@ def generate_transaction():
                     'trans_time':row['trans_time']
                 }
                 socketio.emit('transaction', json.dumps(transaction))
-                time.sleep(random.uniform(0,10))  # Vary the time between transactions
+                time.sleep(random.uniform(0,2))  # Vary the time between transactions
             except Exception as e:
                 print(f"Error generating transaction: {e}")
 
